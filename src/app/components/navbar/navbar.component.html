@@ -1,0 +1,8 @@
+<nav>
+  <ul *ngFor="let link of Links">
+    <li>
+        <!-- TODO: have "home" refresh page -->
+      <a (click)="refresh()">{{link.label}}</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,12 @@
+<div class="random-user-container">
+  <div class="random-user-card-wrapper" *ngFor="let person of user">
+    <img src={{person.picture.large}} />
+    <h1>Hello, my name is</h1>
+    <h2>{{person.name.first}} {{person.name.last}}</h2>
+    <ul>
+        <li (click)="test()">Personal</li>
+        <li (click)="test()">Email</li>
+    </ul>
+  </div>
+  <h2>Other stuff</h2>
+</div>
