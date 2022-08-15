@@ -1,12 +1,55 @@
 <div class="random-user-container">
   <div class="random-user-card-wrapper" *ngFor="let person of user">
-    <img src={{person.picture.large}} />
-    <h1>Hello, my name is</h1>
-    <h2>{{person.name.first}} {{person.name.last}}</h2>
-    <ul>
-        <li (click)="test()">Personal</li>
-        <li (click)="test()">Email</li>
-    </ul>
+    <img src="{{ person.picture.large }}" />
+    <p class="introText">{{ introText }}</p>
+    <p class="infoText">{{ infoText }}</p>
+    <div>
+      <ul>
+        <li
+          #name
+          (click)="test(name)"
+          [attr.data-title]="'Hi, My name is'"
+          [attr.data-value]="person.name.first + ' ' + person.name.last"
+        >
+          Personal
+        </li>
+        <li
+          #email
+          (click)="test(email)"
+          [attr.data-title]="'My email address is'"
+          [attr.data-value]="person.email"
+        >
+          Email
+        </li>
+        <li
+          #dob
+          (click)="test(dob)"
+          [attr.data-title]="'My birthday is'"
+          [attr.data-value]="person.dob.date"
+        >
+          DOB
+        </li>
+        <li
+          #location
+          (click)="test(location)"
+          [attr.data-title]="'My address is'"
+          [attr.data-value]="
+            person.location.street.number + ' ' + person.location.street.name
+          "
+        >
+          Address
+        </li>
+        <li
+        #phone
+        (click)="test(phone)"
+        [attr.data-title]="'My phone number is'"
+        [attr.data-value]="
+          person.phone
+        "
+      >
+        Phone Number
+      </li>
+      </ul>
+    </div>
   </div>
-  <h2>Other stuff</h2>
 </div>
