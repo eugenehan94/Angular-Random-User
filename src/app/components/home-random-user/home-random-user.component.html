@@ -11,7 +11,7 @@
           [attr.data-title]="'Hi, My name is'"
           [attr.data-value]="person.name.first + ' ' + person.name.last"
         >
-          Personal
+          <fa-icon [icon] = "faUser"></fa-icon>
         </li>
         <li
           #email
@@ -19,7 +19,7 @@
           [attr.data-title]="'My email address is'"
           [attr.data-value]="person.email"
         >
-          Email
+          <fa-icon [icon]="faEnvelope"></fa-icon>
         </li>
         <li
           #dob
@@ -27,7 +27,7 @@
           [attr.data-title]="'My birthday is'"
           [attr.data-value]="person.dob.date"
         >
-          DOB
+         <fa-icon [icon]="faCakeCandles"></fa-icon>
         </li>
         <li
           #location
@@ -37,7 +37,7 @@
             person.location.street.number + ' ' + person.location.street.name
           "
         >
-          Address
+          <fa-icon [icon]="faHome"></fa-icon>
         </li>
         <li
         #phone
@@ -47,7 +47,7 @@
           person.phone
         "
       >
-        Phone Number
+        <fa-icon [icon]="faPhone"></fa-icon>
       </li>
       </ul>
     </div>

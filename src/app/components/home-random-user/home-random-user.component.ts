@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'src/app/services/user.service';
-
+import { faUser, faEnvelope, faCakeCandles, faHome, faPhone } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-home-random-user',
   templateUrl: './home-random-user.component.html',
   styleUrls: ['./home-random-user.component.css'],
 })
 export class HomeRandomUserComponent implements OnInit {
+  faUser = faUser;
+  faEnvelope = faEnvelope;
+  faCakeCandles = faCakeCandles;
+  faHome = faHome;
+  faPhone = faPhone;
   user: any = [];
   introText: string = 'Hi, My name is';
   infoText?: string
