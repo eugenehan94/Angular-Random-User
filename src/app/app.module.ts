@@ -7,13 +7,19 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeHeroComponent } from './components/home-hero/home-hero.component';
 import { HomeRandomUserComponent } from './components/home-random-user/home-random-user.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LinkTwoComponent } from './pages/link-two/link-two.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LinkTwoHeroComponent } from './components/link-two-hero/link-two-hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeHeroComponent,
-    HomeRandomUserComponent
+    HomeRandomUserComponent,
+    LinkTwoComponent,
+    HomeComponent,
+    LinkTwoHeroComponent
   ],
   imports: [
     BrowserModule,

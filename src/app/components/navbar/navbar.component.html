@@ -1,8 +1,20 @@
 <nav>
-  <ul *ngFor="let link of Links">
+  <ul>
     <li>
-        <!-- TODO: have "home" refresh page -->
-      <a (click)="refresh()">{{link.label}}</a>
+      <!-- TODO: have "home" refresh page -->
+      <!-- <a (click)="refresh()">{{link.label}}</a> -->
+      <a routerLink="/home"
+        >Home
+        <div routerLinkActive="active"></div
+      ></a>
+    </li>
+    <li>
+      <a routerLink="/link-two"
+        >Link Two
+        <div routerLinkActive="active"></div
+      ></a>
     </li>
   </ul>
 </nav>
+
+<!-- https://stackoverflow.com/questions/59200492/how-to-pass-variable-to-css-in-angular -->

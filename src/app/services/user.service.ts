@@ -14,5 +14,6 @@ export class UserService {
     // TODO: add eventHandle - pipe into catchError
     return this.http.get<any>(this.userLink);
   }
+  
 
 }

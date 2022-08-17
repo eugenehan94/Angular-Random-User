@@ -7,7 +7,7 @@
       <ul>
         <li
           #name
-          (click)="test(name)"
+          (mouseover)="test(name)"
           [attr.data-title]="'Hi, My name is'"
           [attr.data-value]="person.name.first + ' ' + person.name.last"
         >
@@ -15,7 +15,7 @@
         </li>
         <li
           #email
-          (click)="test(email)"
+          (mouseover)="test(email)"
           [attr.data-title]="'My email address is'"
           [attr.data-value]="person.email"
         >
@@ -23,7 +23,7 @@
         </li>
         <li
           #dob
-          (click)="test(dob)"
+          (mouseover)="test(dob)"
           [attr.data-title]="'My birthday is'"
           [attr.data-value]="person.dob.date"
         >
@@ -31,7 +31,7 @@
         </li>
         <li
           #location
-          (click)="test(location)"
+          (mouseover)="test(location)"
           [attr.data-title]="'My address is'"
           [attr.data-value]="
             person.location.street.number + ' ' + person.location.street.name
@@ -41,7 +41,7 @@
         </li>
         <li
         #phone
-        (click)="test(phone)"
+        (mouseover)="test(phone)"
         [attr.data-title]="'My phone number is'"
         [attr.data-value]="
           person.phone
