@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LinkTwoComponent } from './pages/link-two/link-two.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LinkTwoHeroComponent } from './components/link-two-hero/link-two-hero.component';
+import { LinkTwoRandomUserComponent } from './components/link-two-random-user/link-two-random-user.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LinkTwoHeroComponent } from './components/link-two-hero/link-two-hero.c
     HomeRandomUserComponent,
     LinkTwoComponent,
     HomeComponent,
-    LinkTwoHeroComponent
+    LinkTwoHeroComponent,
+    LinkTwoRandomUserComponent
   ],
   imports: [
     BrowserModule,

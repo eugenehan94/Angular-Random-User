@@ -1,0 +1,48 @@
+<div class="link-two-user-container">
+  <div class="link-two-user-card-wrapper">
+    <img src="{{ user?.avatar }}" />
+    <p class="introText">Hello, My name is</p>
+    <p>{{user?.first_name}} {{user?.last_name}}</p>
+    <div>
+        <ul>
+            <li #name
+            (mouseover) = "onMouseOver(name)"
+            [attr.data-title]="'Hello, my name is'"
+            [attr.data-value]="user?.first_name + ' ' + user?.last_name"
+            > 
+                <fa-icon [icon]="faUser"></fa-icon>
+            </li>
+            <li
+            #email
+            (mouseover) = "onMouseOver(email)"
+            [attr.data-title]="'My email address is'"
+            [attr.data-value]="user?.email"
+            > 
+                <fa-icon [icon]="faEnvelope"></fa-icon>
+            </li>
+            <li
+            #dob
+            (mouseover)="onMouseOver(dob)"
+            [attr.data-title]="'My birthday is'"
+            [attr.data-value]="user?.date_of_birth"
+            > 
+                <fa-icon [icon]="faCakeCandles"></fa-icon>
+            </li>
+            <li #address
+            (mouseover) = "onMouseOver(address)"
+            [attr.data-title]="'My address is'"
+            [attr.data-value]="user?.address.street_address"
+            > 
+                <fa-icon [icon]="faHome"></fa-icon>
+            </li>
+            <li #phone
+            (mouseover)="onMouseOver(phone)"
+            [attr.data-title]="'My phone number is'"
+            [attr.data-value]="user?.phone_number"
+            > 
+                <fa-icon [icon]="faPhone"></fa-icon>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>
