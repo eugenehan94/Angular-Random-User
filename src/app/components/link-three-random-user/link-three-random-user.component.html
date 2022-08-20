@@ -3,5 +3,50 @@
         <img src={{user?.image}} />
         <p class="introText">{{introText}}</p>
         <p>{{infoText}}</p>
+        <div>
+            <ul>
+                <li
+                #name
+                (mouseover)="onMouseOver(name)"
+                [attr.data-title]="'Hello, my name is'"
+                [attr.data-value]="user?.firstname + ' ' + user?.lastname"
+                >
+                    <fa-icon [icon]="faUser"></fa-icon>
+                </li>
+                <li
+                #email
+                (mouseover)="onMouseOver(email)"
+                [attr.data-title]="'My email address is '"
+                [attr.data-value]="user?.email"
+                >
+                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                </li>
+                <li
+                #dob
+                (mouseover)="onMouseOver(dob)"
+                [attr.data-title]="'My birthday is '"
+                [attr.data-value]="user?.birthday"
+                >
+                    <fa-icon [icon]="faCakeCandles"></fa-icon>
+                </li>
+                <li
+                #address
+                (mouseover)="onMouseOver(address)"
+                [attr.data-title]="'My address is '"
+                [attr.data-value]="user?.address.street"
+
+                >
+                    <fa-icon [icon]="faHome"></fa-icon>
+                </li>
+                <li
+                #phone
+                (mouseover)="onMouseOver(phone)"
+                [attr.data-title]="'My phone number is '"
+                [attr.data-value]="user?.phone"
+                >
+                    <fa-icon [icon]="faPhone"></fa-icon>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
