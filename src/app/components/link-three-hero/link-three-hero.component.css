@@ -1,0 +1,15 @@
+.link-three-hero-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+    background-color: #2c2e31;
+}
+h1 {
+    color: #ffffff;
+    padding-top: 50px;
+}
+
+p{
+    color: #ffffff;
+}

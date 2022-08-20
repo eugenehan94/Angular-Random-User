@@ -15,8 +15,8 @@ export class LinkTwoRandomUserComponent implements OnInit {
   faPhone = faPhone;
   user?: any
 
-  introText: any
-  infoText: any
+  introText: string = 'Hello, my name is'
+  infoText?: any;
 
   constructor(private linkTwoUserService: LinkTwoUserService) {}
 
@@ -28,11 +28,11 @@ export class LinkTwoRandomUserComponent implements OnInit {
     this.linkTwoUserService.getLinkTwoUsers().subscribe((response) => {
       this.user = response;
       console.log("this.user: ", this.user)
+      this.infoText = `${this.user.first_name} ${this.user.last_name}`
     });
   }
 
   onMouseOver(input: any): void {
-    console.log("onMouseOver input: ", input)
     let getIntroText = input.getAttribute('data-title');
     let getInfoText = input.getAttribute('data-value');
     this.introText = getIntroText;

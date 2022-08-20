@@ -11,6 +11,14 @@ import { LinkTwoComponent } from './pages/link-two/link-two.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LinkTwoHeroComponent } from './components/link-two-hero/link-two-hero.component';
 import { LinkTwoRandomUserComponent } from './components/link-two-random-user/link-two-random-user.component';
+import { LinkThreeComponent } from './pages/link-three/link-three.component';
+import { LinkThreeHeroComponent } from './components/link-three-hero/link-three-hero.component';
+import { LinkThreeRandomUserComponent } from './components/link-three-random-user/link-three-random-user.component';
+
+
+//https://reqres.in/api/users/
+
+//https://fakerapi.it/api/v1/persons?_quantity=1
 
 @NgModule({
   declarations: [
@@ -21,7 +29,10 @@ import { LinkTwoRandomUserComponent } from './components/link-two-random-user/li
     LinkTwoComponent,
     HomeComponent,
     LinkTwoHeroComponent,
-    LinkTwoRandomUserComponent
+    LinkTwoRandomUserComponent,
+    LinkThreeComponent,
+    LinkThreeHeroComponent,
+    LinkThreeRandomUserComponent
   ],
   imports: [
     BrowserModule,
