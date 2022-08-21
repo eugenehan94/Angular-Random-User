@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.test = document.querySelectorAll('a');
-    console.log('test queryS: ', this.test);
+    // console.log('test queryS: ', this.test);
   }
   // refresh() - used to reload page
   refresh(): void {

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LinkFourUserService {
 
-  private randomNumber = Math.floor(Math.random() * 7);
+  private randomNumber = Math.floor(Math.random() * 7 + 1);
   private linkFourUser = `https://reqres.in/api/users/${this.randomNumber}`
   constructor(private http: HttpClient) { }
 

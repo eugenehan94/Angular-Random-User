@@ -1,11 +1,11 @@
-.link-three-user-container {
+.link-four-user-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* height: 350px; */
   }
-  .link-three-user-card-wrapper {
+  .link-four-user-card-wrapper {
     margin-top: -250px;
     margin-bottom: 10px;
     background-color: #ffffff;
@@ -18,7 +18,7 @@
     align-items: center;
   }
   
-  .link-three-user-card-wrapper img {
+  .link-four-user-card-wrapper img {
     width: 150px;
     border-radius: 50%;
     margin-bottom: 10px;
@@ -35,19 +35,20 @@
       margin: 5px;
   }
   
-  .link-three-user-card-wrapper ul {
+  .link-four-user-card-wrapper ul {
       list-style-type: none;
       padding: 0;
   }
-  .link-three-user-card-wrapper ul > li {
+  .link-four-user-card-wrapper ul > li {
       display: inline-block;
       padding: 10px 20px;
       cursor: pointer;
   }
 
+
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .link-three-user-card-wrapper {
+  .link-four-user-card-wrapper {
     margin-top: -150px;
     width: 200px;
     border-radius: 0;

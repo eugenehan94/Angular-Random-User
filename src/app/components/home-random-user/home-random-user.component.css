@@ -25,22 +25,44 @@
 }
 
 .introText {
-    color: rgb(133, 129, 129);
-    font-size: 18px;
-    margin: 0;
+  color: rgb(133, 129, 129);
+  font-size: 18px;
+  margin: 0;
 }
-.infoText{
-    color: #2c2e31;
-    font-size: 38px;
-    margin: 5px;
+.infoText {
+  color: #2c2e31;
+  font-size: 38px;
+  margin: 5px;
 }
 
 .random-user-card-wrapper ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 .random-user-card-wrapper ul > li {
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .random-user-card-wrapper {
+    margin-top: -200px;
+    width: 200px;
+    border-radius: 0;
+    padding: 30px;
+  }
+
+  .infoText {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

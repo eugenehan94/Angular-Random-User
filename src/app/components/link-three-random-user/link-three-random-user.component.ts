@@ -30,7 +30,6 @@ export class LinkThreeRandomUserComponent implements OnInit {
       // response.data is an array with one index - thus converted to object
       const obj = {...response.data[0]}
       this.user = obj;
-      console.log("this.user3: ", this.user)
       this.infoText = `${this.user.firstname} ${this.user.lastname}`
     })
   }

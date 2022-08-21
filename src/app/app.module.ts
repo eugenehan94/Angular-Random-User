@@ -15,6 +15,8 @@ import { LinkThreeComponent } from './pages/link-three/link-three.component';
 import { LinkThreeHeroComponent } from './components/link-three-hero/link-three-hero.component';
 import { LinkThreeRandomUserComponent } from './components/link-three-random-user/link-three-random-user.component';
 import { LinkFourComponent } from './pages/link-four/link-four.component';
+import { LinkFourHeroComponent } from './components/link-four-hero/link-four-hero.component';
+import { LinkFourRandomUserComponent } from './components/link-four-random-user/link-four-random-user.component';
 
 
 //https://reqres.in/api/users/
@@ -34,7 +36,9 @@ import { LinkFourComponent } from './pages/link-four/link-four.component';
     LinkThreeComponent,
     LinkThreeHeroComponent,
     LinkThreeRandomUserComponent,
-    LinkFourComponent
+    LinkFourComponent,
+    LinkFourHeroComponent,
+    LinkFourRandomUserComponent
   ],
   imports: [
     BrowserModule,

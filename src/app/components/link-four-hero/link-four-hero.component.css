@@ -1,4 +1,4 @@
-.link-two-hero-container {
+.link-four-hero-container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -16,7 +16,7 @@ p{
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .link-two-hero-container {
+    .link-four-hero-container {
       text-align: center;
     }
     h1 {
@@ -28,4 +28,3 @@ p{
       padding-right: 5px;
     }
   }
-  

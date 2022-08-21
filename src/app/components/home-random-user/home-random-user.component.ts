@@ -25,7 +25,6 @@ export class HomeRandomUserComponent implements OnInit {
   getUser(): void {
     this.userService.getUser().subscribe((response) => {
       this.user = response.results;
-      console.log("user: ", this.user)
       const returnedResult = this.user.find((result: any) => result)
       this.infoText = `${returnedResult.name.first} ${returnedResult.name.last} `
     });
