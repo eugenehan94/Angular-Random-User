@@ -1,32 +1,76 @@
 <nav>
   <ul>
-    <li>
-      <!-- TODO: have "home" refresh page -->
-      <!-- <a (click)="refresh()">{{link.label}}</a> -->
+    <li class="desktop">
       <a routerLink="/home"
         >Link One
         <div routerLinkActive="active"></div
       ></a>
     </li>
-    <li>
+    <li class="desktop">
       <a routerLink="/link-two"
         >Link Two
         <div routerLinkActive="active"></div
       ></a>
     </li>
-    <li>
+    <li class="desktop">
       <a routerLink="/link-three"
         >Link Three
         <div routerLinkActive="active"></div
       ></a>
     </li>
-    <li>
+    <li class="desktop">
       <a routerLink="/link-four"
         >Link Four
         <div routerLinkActive="active"></div
       ></a>
     </li>
+    <li class="mobile">
+      <fa-icon
+        [icon]="faBars"
+        style="color: white; cursor: pointer"
+        (click)="toggleMobileMenu()"
+      ></fa-icon>
+    </li>
   </ul>
 </nav>
+
+<div
+  class="mobile-menu-container"
+  [ngClass]="showMobileMenu === true ? 'show-mobile-menu' : 'mobile-menu'"
+>
+  <div class="mobile-menu-close-btn">
+    <fa-icon
+      [icon]="faXmark"
+      (click)="toggleMobileMenu()"
+      style="cursor: pointer; color: red; font-size: 20px"
+    ></fa-icon>
+  </div>
+  <ul>
+    <li>
+      <a routerLink="/home" (click)="toggleMobileMenu()"
+        >Link One
+        <div routerLinkActive="active"></div
+      ></a>
+    </li>
+    <li>
+      <a routerLink="/link-two" (click)="toggleMobileMenu()"
+        >Link Two
+        <div routerLinkActive="active"></div
+      ></a>
+    </li>
+    <li>
+      <a routerLink="/link-three" (click)="toggleMobileMenu()"
+        >Link Three
+        <div routerLinkActive="active"></div
+      ></a>
+    </li>
+    <li>
+      <a routerLink="/link-four" (click)="toggleMobileMenu()"
+        >Link Four
+        <div routerLinkActive="active"></div
+      ></a>
+    </li>
+  </ul>
+</div>
 
 <!-- https://stackoverflow.com/questions/59200492/how-to-pass-variable-to-css-in-angular -->
