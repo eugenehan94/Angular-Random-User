@@ -36,7 +36,11 @@
 
 <div
   class="mobile-menu-container"
-  [ngClass]="showMobileMenu === true ? 'show-mobile-menu' : 'mobile-menu'"
+  [ngClass]="
+    showMobileMenu === true && screenWidth < 600
+      ? 'show-mobile-menu'
+      : 'mobile-menu'
+  "
 >
   <div class="mobile-menu-close-btn">
     <fa-icon
@@ -45,30 +49,18 @@
       style="cursor: pointer; color: red; font-size: 20px"
     ></fa-icon>
   </div>
-  <ul>
+  <ul class="mobile-menu-ul">
     <li>
-      <a routerLink="/home" (click)="toggleMobileMenu()"
-        >Link One
-        <div routerLinkActive="active"></div
-      ></a>
+      <a routerLink="/home" (click)="toggleMobileMenu()">Link One</a>
     </li>
     <li>
-      <a routerLink="/link-two" (click)="toggleMobileMenu()"
-        >Link Two
-        <div routerLinkActive="active"></div
-      ></a>
+      <a routerLink="/link-two" (click)="toggleMobileMenu()">Link Two</a>
     </li>
     <li>
-      <a routerLink="/link-three" (click)="toggleMobileMenu()"
-        >Link Three
-        <div routerLinkActive="active"></div
-      ></a>
+      <a routerLink="/link-three" (click)="toggleMobileMenu()">Link Three </a>
     </li>
     <li>
-      <a routerLink="/link-four" (click)="toggleMobileMenu()"
-        >Link Four
-        <div routerLinkActive="active"></div
-      ></a>
+      <a routerLink="/link-four" (click)="toggleMobileMenu()">Link Four</a>
     </li>
   </ul>
 </div>

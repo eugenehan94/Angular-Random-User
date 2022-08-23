@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, OnChanges } from '@angular/core';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,17 +11,25 @@ export class NavbarComponent implements OnInit {
   faXmark = faXmark;
   test: any;
   showMobileMenu: boolean = false;
-  constructor() {}
+
+  public screenWidth: any;
+  currentRoute?: any;
+
+  constructor(private router: Router) {  }
 
   ngOnInit(): void {
     this.test = document.querySelectorAll('a');
-    // console.log('test queryS: ', this.test);
+    this.screenWidth = window.innerWidth;
   }
   // refresh() - used to reload page
   refresh(): void {
     window.location.reload();
   }
-  toggleMobileMenu(): void {
-    this.showMobileMenu = !this.showMobileMenu
+  toggleMobileMenu(input?: any): void {
+    this.showMobileMenu = !this.showMobileMenu;
+  }
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.screenWidth = window.innerWidth;
   }
 }
