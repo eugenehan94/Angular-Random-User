@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LinkThreeUserService } from 'src/app/services/link-three-user.service';
-import { faUser, faEnvelope, faCakeCandles, faHome, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faCakeCandles, faHome, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-link-three-random-user',
@@ -13,11 +13,14 @@ export class LinkThreeRandomUserComponent implements OnInit {
   faCakeCandles = faCakeCandles;
   faHome = faHome;
   faPhone = faPhone;
+  faTriangleExclamation = faTriangleExclamation;
 
   user?: any;
 
   introText?: string = 'Hello, my name is'
   infoText?: string = 'Info text';
+
+  error: any;
 
   constructor(private linkThreeUserService: LinkThreeUserService) { }
 
@@ -31,6 +34,8 @@ export class LinkThreeRandomUserComponent implements OnInit {
       const obj = {...response.data[0]}
       this.user = obj;
       this.infoText = `${this.user.firstname} ${this.user.lastname}`
+    }, error => {
+      this.error = error
     })
   }
   onMouseOver(input:any){

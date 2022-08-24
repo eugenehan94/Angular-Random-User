@@ -1,4 +1,12 @@
-import { Component, OnInit, HostListener, OnChanges } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  OnChanges,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 @Component({
@@ -6,7 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
   faBars = faBars;
   faXmark = faXmark;
   test: any;
@@ -15,11 +23,17 @@ export class NavbarComponent implements OnInit {
   public screenWidth: any;
   currentRoute?: any;
 
-  constructor(private router: Router) {  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.test = document.querySelectorAll('a');
     this.screenWidth = window.innerWidth;
+  }
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit called")
+    console.log("value test: ", this.testing )
+    let width = this.testing?.nativeElement.offsetWidth;
+    console.log("test width: ", width)
   }
   // refresh() - used to reload page
   refresh(): void {
@@ -32,4 +46,6 @@ export class NavbarComponent implements OnInit {
   onWindowResize() {
     this.screenWidth = window.innerWidth;
   }
+  @ViewChild('testing')
+  testing?: ElementRef;
 }

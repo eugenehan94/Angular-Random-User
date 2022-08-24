@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'src/app/services/user.service';
-import { faUser, faEnvelope, faCakeCandles, faHome, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faCakeCandles, faHome, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-home-random-user',
   templateUrl: './home-random-user.component.html',
@@ -13,9 +13,11 @@ export class HomeRandomUserComponent implements OnInit {
   faCakeCandles = faCakeCandles;
   faHome = faHome;
   faPhone = faPhone;
+  faTriangleExclamation = faTriangleExclamation;
   user: any = [];
   introText: string = 'Hi, My name is';
   infoText?: string
+  error: any;
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
@@ -27,6 +29,8 @@ export class HomeRandomUserComponent implements OnInit {
       this.user = response.results;
       const returnedResult = this.user.find((result: any) => result)
       this.infoText = `${returnedResult.name.first} ${returnedResult.name.last} `
+    }, error => {
+      this.error = error
     });
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LinkTwoUserService } from 'src/app/services/link-two-user.service';
-import { faUser, faEnvelope, faCakeCandles, faHome, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faCakeCandles, faHome, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-link-two-random-user',
   templateUrl: './link-two-random-user.component.html',
@@ -13,10 +13,13 @@ export class LinkTwoRandomUserComponent implements OnInit {
   faCakeCandles = faCakeCandles;
   faHome = faHome;
   faPhone = faPhone;
+  faTriangleExclamation = faTriangleExclamation;
   user?: any
 
   introText: string = 'Hello, my name is'
   infoText?: any;
+
+  error: any;
 
   constructor(private linkTwoUserService: LinkTwoUserService) {}
 
@@ -28,6 +31,8 @@ export class LinkTwoRandomUserComponent implements OnInit {
     this.linkTwoUserService.getLinkTwoUsers().subscribe((response) => {
       this.user = response;
       this.infoText = `${this.user.first_name} ${this.user.last_name}`
+    }, error => {
+      this.error = error
     });
   }
 
