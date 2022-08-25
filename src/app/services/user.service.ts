@@ -6,7 +6,7 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UserService {
-  private userLink = 'https://randomuser.me/api/';
+   userLink = 'https://randomuser.me/api/';
 
   constructor(private http: HttpClient) {}
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LinkTwoUserService {
 
-  private linkTwoUser = "https://random-data-api.com/api/users/random_user"
+  linkTwoUser = "https://random-data-api.com/api/users/random_user"
 
   constructor(private http: HttpClient) { }
 

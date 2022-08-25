@@ -54,7 +54,7 @@
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .link-four-user-card-wrapper {
-    margin-top: -150px;
+    margin-top: -100px;
     width: 200px;
     border-radius: 0;
     padding: 30px;

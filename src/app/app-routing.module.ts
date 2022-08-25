@@ -5,7 +5,7 @@ import { LinkTwoComponent } from './pages/link-two/link-two.component';
 import { LinkThreeComponent } from './pages/link-three/link-three.component';
 import { LinkFourComponent } from './pages/link-four/link-four.component';
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'link-two', component: LinkTwoComponent},
   {path: 'link-three', component: LinkThreeComponent},

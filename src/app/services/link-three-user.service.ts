@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LinkThreeUserService {
 
-  private linkThreeUser = "https://fakerapi.it/api/v1/persons?_quantity=1"
+  linkThreeUser = "https://fakerapi.it/api/v1/persons?_quantity=1"
 
   constructor(private http: HttpClient) { }
 

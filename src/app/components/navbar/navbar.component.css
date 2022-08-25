@@ -21,10 +21,10 @@ a {
 }
 
 .active {
-  background-color: red;
-  width: 50px;
-  height: 5px;
-  transition: all 0.5s linear;
+  color: red;
+  transition: all 0.2s linear;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .mobile {
