@@ -30,7 +30,7 @@
           #dob
           (mouseover)="test(dob)"
           [attr.data-title]="'My birthday is'"
-          [attr.data-value]="person.dob.date"
+          [attr.data-value]="person.dob.date | date: 'longDate'"
         >
           <fa-icon [icon]="faCakeCandles"></fa-icon>
         </li>

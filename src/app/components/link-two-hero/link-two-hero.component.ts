@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LINK_TWO_TITLE, LINK_TWO_DESCRIPTION } from 'src/app/__helpers/constants';
+import { LINK_TWO_TITLE, LINK_TWO_DESCRIPTION, VIEW_API_TEXT } from 'src/app/__helpers/constants';
 import { LinkTwoUserService } from 'src/app/services/link-two-user.service';
 @Component({
   selector: 'app-link-two-hero',
@@ -10,7 +10,7 @@ export class LinkTwoHeroComponent implements OnInit {
 
   title: string = LINK_TWO_TITLE;
   description: string = LINK_TWO_DESCRIPTION;
-
+  viewApiBtnText = VIEW_API_TEXT;
   constructor(private linkTwoUserService: LinkTwoUserService) { }
 
   ngOnInit(): void {

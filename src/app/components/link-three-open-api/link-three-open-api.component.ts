@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { LINK_THREE_TITLE, LINK_THREE_DESCRIPTION, VIEW_API_TEXT } from 'src/app/__helpers/constants';
 import { LinkThreeUserService } from 'src/app/services/link-three-user.service';
-@Component({
-  selector: 'app-link-three-hero',
-  templateUrl: './link-three-hero.component.html',
-  styleUrls: ['./link-three-hero.component.css']
-})
-export class LinkThreeHeroComponent implements OnInit {
+import { VIEW_API_TEXT } from 'src/app/__helpers/constants';
 
-  title: string = LINK_THREE_TITLE;
-  description: string = LINK_THREE_DESCRIPTION;
+@Component({
+  selector: 'app-link-three-open-api',
+  templateUrl: './link-three-open-api.component.html',
+  styleUrls: ['./link-three-open-api.component.css']
+})
+export class LinkThreeOpenApiComponent implements OnInit {
+
   viewApiBtnText = VIEW_API_TEXT;
+
   constructor(private linkThreeUserService: LinkThreeUserService) { }
 
   ngOnInit(): void {
   }
-
   onClick(): void {
     window.open (this.linkThreeUserService.linkThreeUser, '_blank', 'noopener, noreferrer');
   }
-
-
 }

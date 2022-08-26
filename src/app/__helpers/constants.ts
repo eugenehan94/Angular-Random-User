@@ -13,3 +13,5 @@ export const LINK_THREE_DESCRIPTION =
 export const LINK_FOUR_TITLE = 'RANDOM USER GENERATOR FOUR';
 export const LINK_FOUR_DESCRIPTION =
   'A free, open source API for generating random user data. Like Lorem Ipsum, but for people.';
+
+export const VIEW_API_TEXT = "View API";
