@@ -1,0 +1,37 @@
+p {
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+.footer-container{
+    background-color: #222;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+
+}
+.footer-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.icon-border {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.icon {
+    color: #ffffff;
+     margin: 0 10px
+}
+.personal-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.personal-link:hover {
+    font-style:italic;
+}

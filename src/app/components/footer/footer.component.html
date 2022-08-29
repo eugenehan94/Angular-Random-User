@@ -1,0 +1,29 @@
+<div class="footer-container">
+  <div class="footer-wrapper">
+    <div class="footer-icon-wrapper">
+      <div class="icon-border">
+        <fa-icon [icon]="faFacebookF" class="icon"></fa-icon>
+      </div>
+      <div class="icon-border">
+        <fa-icon [icon]="faInstagram" class="icon"></fa-icon>
+      </div>
+      <div class="icon-border">
+        <fa-icon [icon]="faTwitter" class="icon"></fa-icon>
+      </div>
+    </div>
+    <div>
+      <p>Info &#183; Support &#183; Marketing</p>
+    </div>
+    <div>
+      <p>Terms of use &#183; Privacy Policy</p>
+    </div>
+    <div>
+      <p>
+        &#169; {{ year }}
+        <span class="personal-link" (click)="openPersonalWebsite()"
+          >Eugene Han</span
+        >
+      </p>
+    </div>
+  </div>
+</div>

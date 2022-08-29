@@ -1,4 +1,8 @@
 <div class="link-three-user-container">
+  <!-- Loading -->
+  <div class="link-four-user-card-wrapper" *ngIf="isLoading">
+    <app-loader></app-loader>
+  </div>
   <!-- Error banner - API is unsuccessful -->
   <div class="link-three-user-card-wrapper" *ngIf="error">
     <fa-icon

@@ -15,6 +15,7 @@ export class LinkFourRandomUserComponent implements OnInit {
   faUser = faUser;
   faEnvelope = faEnvelope;
   faTriangleExclamation = faTriangleExclamation;
+  isLoading: boolean = true;
   user?: any;
 
   introText?: string = 'Hello, my name is ';
@@ -32,11 +33,12 @@ export class LinkFourRandomUserComponent implements OnInit {
     this.linkFourUserServer.getLinkFourUser().subscribe(
       (response) => {
         this.user = response.data;
-
         this.infoText = this.user.first_name + ' ' + this.user.last_name;
+        this.isLoading = false;
       },
       error => {
         this.error = error;
+        this.isLoading = false;
       }
     );
   }

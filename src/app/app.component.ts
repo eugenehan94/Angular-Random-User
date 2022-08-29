@@ -12,5 +12,7 @@ export class AppComponent {
 
   ngOnInit(): void {};
     
-  
+  onActive():void {
+    window.scroll(0,0)
+  }
 }

@@ -15,6 +15,7 @@ export class HomeRandomUserComponent implements OnInit {
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
   user: any = [];
+  isLoading: boolean = true;
   introText: string = 'Hi, My name is';
   infoText?: string
   error: any;
@@ -29,8 +30,10 @@ export class HomeRandomUserComponent implements OnInit {
       this.user = response.results;
       const returnedResult = this.user.find((result: any) => result)
       this.infoText = `${returnedResult.name.first} ${returnedResult.name.last} `
+      this.isLoading = false;
     }, error => {
       this.error = error
+      this.isLoading = false;
     });
   }
 

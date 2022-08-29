@@ -23,6 +23,10 @@
     font-weight: bold;
     padding: 1rem 0;
   }
+  .icon {
+    color: red; 
+    font-size: 30px
+  }
   .link-four-user-card-wrapper img {
     width: 150px;
     border-radius: 50%;

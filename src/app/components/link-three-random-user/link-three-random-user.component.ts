@@ -14,7 +14,7 @@ export class LinkThreeRandomUserComponent implements OnInit {
   faHome = faHome;
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
-
+  isLoading: boolean = true;
   user?: any;
 
   introText?: string = 'Hello, my name is'
@@ -34,8 +34,10 @@ export class LinkThreeRandomUserComponent implements OnInit {
       const obj = {...response.data[0]}
       this.user = obj;
       this.infoText = `${this.user.firstname} ${this.user.lastname}`
+      this.isLoading = false;
     }, error => {
-      this.error = error
+      this.error = error;
+      this.isLoading = false;
     })
   }
   onMouseOver(input:any){

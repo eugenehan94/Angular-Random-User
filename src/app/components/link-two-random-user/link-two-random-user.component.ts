@@ -15,7 +15,7 @@ export class LinkTwoRandomUserComponent implements OnInit {
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
   user?: any
-
+  isLoading: boolean = true;
   introText: string = 'Hello, my name is'
   infoText?: any;
 
@@ -31,8 +31,10 @@ export class LinkTwoRandomUserComponent implements OnInit {
     this.linkTwoUserService.getLinkTwoUsers().subscribe((response) => {
       this.user = response;
       this.infoText = `${this.user.first_name} ${this.user.last_name}`
+      this.isLoading = false;
     }, error => {
-      this.error = error
+      this.error = error;
+      this.isLoading = false;
     });
   }
 

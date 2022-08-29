@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HOME_HERO_TITLE, HOME_HERO_DESCRIPTION, VIEW_API_TEXT } from 'src/app/__helpers/constants';
-import { UserService } from 'src/app/services/user.service';
+import { HOME_HERO_TITLE, HOME_HERO_DESCRIPTION} from 'src/app/__helpers/constants';
+
 @Component({
   selector: 'app-home-hero',
   templateUrl: './home-hero.component.html',
@@ -9,14 +9,8 @@ import { UserService } from 'src/app/services/user.service';
 export class HomeHeroComponent implements OnInit {
   title = HOME_HERO_TITLE;
   description = HOME_HERO_DESCRIPTION;
-  viewApiBtnText = VIEW_API_TEXT;
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  onClick(): void {
-    window.open (this.userService.userLink, '_blank', 'noopener, noreferrer');
-  }
-
 }

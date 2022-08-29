@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LINK_THREE_TITLE, LINK_THREE_DESCRIPTION, VIEW_API_TEXT } from 'src/app/__helpers/constants';
-import { LinkThreeUserService } from 'src/app/services/link-three-user.service';
+import { LINK_THREE_TITLE, LINK_THREE_DESCRIPTION } from 'src/app/__helpers/constants';
+
 @Component({
   selector: 'app-link-three-hero',
   templateUrl: './link-three-hero.component.html',
@@ -10,15 +10,11 @@ export class LinkThreeHeroComponent implements OnInit {
 
   title: string = LINK_THREE_TITLE;
   description: string = LINK_THREE_DESCRIPTION;
-  viewApiBtnText = VIEW_API_TEXT;
-  constructor(private linkThreeUserService: LinkThreeUserService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  onClick(): void {
-    window.open (this.linkThreeUserService.linkThreeUser, '_blank', 'noopener, noreferrer');
-  }
 
 
 }
