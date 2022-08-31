@@ -21,6 +21,7 @@
           (mouseover)="onMouseOver(name)"
           [attr.data-title]="'Hello, my name is '"
           [attr.data-value]="user?.first_name + ' ' + user?.last_name"
+          style="border-bottom: 2px solid red"
         >
           <fa-icon [icon]="faUser"></fa-icon>
         </li>

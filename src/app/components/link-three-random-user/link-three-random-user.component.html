@@ -1,10 +1,10 @@
 <div class="link-three-user-container">
   <!-- Loading -->
-  <div class="link-four-user-card-wrapper" *ngIf="isLoading">
+  <div class="link-three-user-card-wrapper" *ngIf="isLoading">
     <app-loader></app-loader>
   </div>
   <!-- Error banner - API is unsuccessful -->
-  <div class="link-three-user-card-wrapper" *ngIf="error">
+  <div class="link-three-user-card-wrapper" *ngIf="error && !isLoading">
     <fa-icon
       [icon]="faTriangleExclamation"
       class="icon"
@@ -13,7 +13,7 @@
       Oops, something went wrong. Please try again later
     </div>
   </div>
-  <div class="link-three-user-card-wrapper" *ngIf="!error">
+  <div class="link-three-user-card-wrapper" *ngIf="!error && !isLoading">
     <img src="{{ user?.image }}" />
     <p class="introText">{{ introText }}</p>
     <p class="infoText">{{ infoText }}</p>

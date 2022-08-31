@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, ElementRef, AfterViewInit, ViewChildren } from '@angular/core';
 import { LinkFourUserService } from 'src/app/services/link-four--user.service';
 import {
   faUser,
@@ -11,7 +11,7 @@ import {
   templateUrl: './link-four-random-user.component.html',
   styleUrls: ['./link-four-random-user.component.css'],
 })
-export class LinkFourRandomUserComponent implements OnInit {
+export class LinkFourRandomUserComponent implements OnInit, AfterViewInit {
   faUser = faUser;
   faEnvelope = faEnvelope;
   faTriangleExclamation = faTriangleExclamation;
@@ -23,10 +23,19 @@ export class LinkFourRandomUserComponent implements OnInit {
 
   error: any;
 
-  constructor(private linkFourUserServer: LinkFourUserService) {}
+  @ViewChild('name') name?: ElementRef<HTMLInputElement>
+  @ViewChild('email') email?: ElementRef<HTMLInputElement>
+  
+  constructor(
+    private linkFourUserServer: LinkFourUserService,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {
     this.getUser();
+  }
+
+  ngAfterViewInit():void {
   }
 
   getUser(): void {
@@ -36,7 +45,7 @@ export class LinkFourRandomUserComponent implements OnInit {
         this.infoText = this.user.first_name + ' ' + this.user.last_name;
         this.isLoading = false;
       },
-      error => {
+      (error) => {
         this.error = error;
         this.isLoading = false;
       }
@@ -44,6 +53,9 @@ export class LinkFourRandomUserComponent implements OnInit {
   }
 
   onMouseOver(input: any): void {
+    console.log("name: ", this.name?.nativeElement.style)
+    console.log("email: ", this.email?.nativeElement)
+    console.log('initial input: ', input);
     let getIntroText = input.getAttribute('data-title');
     let getInfoText = input.getAttribute('data-value');
     this.introText = getIntroText;
