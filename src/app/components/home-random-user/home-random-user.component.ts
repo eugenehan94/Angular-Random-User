@@ -1,7 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 import { UserService } from 'src/app/services/user.service';
-import { faUser, faEnvelope, faCakeCandles, faHome, faPhone, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faEnvelope,
+  faCakeCandles,
+  faHome,
+  faPhone,
+  faTriangleExclamation,
+} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-home-random-user',
   templateUrl: './home-random-user.component.html',
@@ -14,30 +27,49 @@ export class HomeRandomUserComponent implements OnInit {
   faHome = faHome;
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
+
   user: any = [];
   isLoading: boolean = true;
   introText: string = 'Hi, My name is';
-  infoText?: string
+  infoText?: string;
   error: any;
-  constructor(private userService: UserService) {}
+
+  @ViewChild('name') name?: ElementRef<HTMLInputElement>;
+  @ViewChild('email') email?: ElementRef<HTMLInputElement>;
+  @ViewChild('dob') dob?: ElementRef<HTMLInputElement>;
+  @ViewChild('location') location?: ElementRef<HTMLInputElement>;
+  @ViewChild('phone') phone?: ElementRef<HTMLInputElement>;
+
+  constructor(private userService: UserService, private renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.getUser();
   }
 
   getUser(): void {
-    this.userService.getUser().subscribe((response) => {
-      this.user = response.results;
-      const returnedResult = this.user.find((result: any) => result)
-      this.infoText = `${returnedResult.name.first} ${returnedResult.name.last} `
-      this.isLoading = false;
-    }, error => {
-      this.error = error
-      this.isLoading = false;
-    });
+    this.userService.getUser().subscribe(
+      (response) => {
+        this.user = response.results;
+        const returnedResult = this.user.find((result: any) => result);
+        this.infoText = `${returnedResult.name.first} ${returnedResult.name.last} `;
+        this.isLoading = false;
+      },
+      (error) => {
+        this.error = error;
+        this.isLoading = false;
+      }
+    );
   }
 
   test(input: any) {
+    this.renderer.removeClass(this.name?.nativeElement, 'active')
+    this.renderer.removeClass(this.email?.nativeElement, 'active')
+    this.renderer.removeClass(this.dob?.nativeElement, 'active')
+    this.renderer.removeClass(this.location?.nativeElement, 'active')
+    this.renderer.removeClass(this.phone?.nativeElement, 'active')
+
+    this.renderer.addClass(input, 'active')
+
     let getIntroText = input.getAttribute('data-title');
     let getInfoText = input.getAttribute('data-value');
     this.introText = getIntroText;

@@ -28,8 +28,8 @@
   border-radius: 50%;
   margin-bottom: 10px;
 }
-.icon{
-  color: red; 
+.icon {
+  color: red;
   font-size: 30px;
 }
 .introText {
@@ -52,7 +52,9 @@
   padding: 10px 20px;
   cursor: pointer;
 }
-
+.active {
+  border-bottom: 2px solid red;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .random-user-card-wrapper {

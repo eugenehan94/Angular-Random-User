@@ -1,4 +1,10 @@
-import { Component, OnInit, Renderer2, ViewChild, ElementRef, AfterViewInit, ViewChildren } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 import { LinkFourUserService } from 'src/app/services/link-four--user.service';
 import {
   faUser,
@@ -11,7 +17,7 @@ import {
   templateUrl: './link-four-random-user.component.html',
   styleUrls: ['./link-four-random-user.component.css'],
 })
-export class LinkFourRandomUserComponent implements OnInit, AfterViewInit {
+export class LinkFourRandomUserComponent implements OnInit {
   faUser = faUser;
   faEnvelope = faEnvelope;
   faTriangleExclamation = faTriangleExclamation;
@@ -23,9 +29,9 @@ export class LinkFourRandomUserComponent implements OnInit, AfterViewInit {
 
   error: any;
 
-  @ViewChild('name') name?: ElementRef<HTMLInputElement>
-  @ViewChild('email') email?: ElementRef<HTMLInputElement>
-  
+  @ViewChild('name') name?: ElementRef<HTMLInputElement>;
+  @ViewChild('email') email?: ElementRef<HTMLInputElement>;
+
   constructor(
     private linkFourUserServer: LinkFourUserService,
     private renderer: Renderer2
@@ -33,9 +39,6 @@ export class LinkFourRandomUserComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getUser();
-  }
-
-  ngAfterViewInit():void {
   }
 
   getUser(): void {
@@ -53,12 +56,15 @@ export class LinkFourRandomUserComponent implements OnInit, AfterViewInit {
   }
 
   onMouseOver(input: any): void {
-    console.log("name: ", this.name?.nativeElement.style)
-    console.log("email: ", this.email?.nativeElement)
-    console.log('initial input: ', input);
+    this.renderer.removeClass(this.name?.nativeElement, 'active')
+    this.renderer.removeClass(this.email?.nativeElement, 'active')
+    this.renderer.addClass(input, 'active')
+
     let getIntroText = input.getAttribute('data-title');
     let getInfoText = input.getAttribute('data-value');
     this.introText = getIntroText;
     this.infoText = getInfoText;
+
+
   }
 }
