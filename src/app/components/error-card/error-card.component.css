@@ -1,0 +1,17 @@
+.error-card-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.error-message {
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.icon {
+  color: red;
+  font-size: 30px;
+  text-align: center;
+}

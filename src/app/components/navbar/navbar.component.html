@@ -22,10 +22,11 @@
   </ul>
 </nav>
 
+
 <div
   class="mobile-menu-container"
   [ngClass]="
-    showMobileMenu === true && screenWidth < 600
+    showMobileMenu && screenWidth < 600
       ? 'show-mobile-menu'
       : 'mobile-menu'
   "

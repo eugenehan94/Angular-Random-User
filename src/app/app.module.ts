@@ -23,11 +23,7 @@ import { LinkTwoOpenApiComponent } from './components/link-two-open-api/link-two
 import { HomeOpenApiComponent } from './components/home-open-api/home-open-api.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
-
-
-//https://reqres.in/api/users/
-
-//https://fakerapi.it/api/v1/persons?_quantity=1
+import { ErrorCardComponent } from './components/error-card/error-card.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +46,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     LinkTwoOpenApiComponent,
     HomeOpenApiComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    ErrorCardComponent
   ],
   imports: [
     BrowserModule,

@@ -3,15 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LinkThreeUserService {
+  linkThreeUser = 'https://fakerapi.it/api/v1/persons?_quantity=1';
 
-  linkThreeUser = "https://fakerapi.it/api/v1/persons?_quantity=1"
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getLinkThreeUser(): Observable<any> {
-    return this.http.get<any>(this.linkThreeUser)
+    return this.http.get<any>(this.linkThreeUser);
   }
 }

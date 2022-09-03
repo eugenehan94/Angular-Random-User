@@ -3,17 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LinkFourUserService {
-
   private randomNumber = Math.floor(Math.random() * 7 + 1);
-   linkFourUser = `https://reqres.in/api/users/${this.randomNumber}`
-  constructor(private http: HttpClient) { }
+  linkFourUser = `https://reqres.in/api/users/${this.randomNumber}`;
+  constructor(private http: HttpClient) {}
 
   getLinkFourUser(): Observable<any> {
-   return this.http.get<any>(this.linkFourUser)
+    return this.http.get<any>(this.linkFourUser);
   }
-
-
 }
