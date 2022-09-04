@@ -1,6 +1,12 @@
-# AngularRandomUser
+# Angular Random User
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+
+This project consist of different free random user APIs that users can choose from. They also have the ability to see a sample get request for each API.
+
+## Github page link: https://eugenehan94.github.io/Angular-Random-User/angular-random-user#/home
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Development server
 
