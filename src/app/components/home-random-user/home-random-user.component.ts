@@ -61,7 +61,7 @@ export class HomeRandomUserComponent implements OnInit {
     );
   }
 
-  test(input: any) {
+  onMouseOver(input: any) {
     this.renderer.removeClass(this.name?.nativeElement, 'active')
     this.renderer.removeClass(this.email?.nativeElement, 'active')
     this.renderer.removeClass(this.dob?.nativeElement, 'active')

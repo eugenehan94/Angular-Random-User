@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LinkTwoUserService } from 'src/app/services/link-two-user.service';
-import { VIEW_API_TEXT } from 'src/app/__helpers/constants';
+import { VIEW_API_TEXT, OPEN_API_TITLE } from 'src/app/__helpers/constants';
 @Component({
   selector: 'app-link-two-open-api',
   templateUrl: './link-two-open-api.component.html',
@@ -9,6 +9,7 @@ import { VIEW_API_TEXT } from 'src/app/__helpers/constants';
 export class LinkTwoOpenApiComponent implements OnInit {
 
   viewApiBtnText = VIEW_API_TEXT;
+  title = OPEN_API_TITLE;
 
   constructor(private linkTwoUserService: LinkTwoUserService) { }
 

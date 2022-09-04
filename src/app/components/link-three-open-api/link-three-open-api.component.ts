@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LinkThreeUserService } from 'src/app/services/link-three-user.service';
-import { VIEW_API_TEXT } from 'src/app/__helpers/constants';
+import { VIEW_API_TEXT, OPEN_API_TITLE } from 'src/app/__helpers/constants';
 
 @Component({
   selector: 'app-link-three-open-api',
@@ -10,6 +10,7 @@ import { VIEW_API_TEXT } from 'src/app/__helpers/constants';
 export class LinkThreeOpenApiComponent implements OnInit {
 
   viewApiBtnText = VIEW_API_TEXT;
+  title = OPEN_API_TITLE;
 
   constructor(private linkThreeUserService: LinkThreeUserService) { }
 

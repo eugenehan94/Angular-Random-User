@@ -13,17 +13,13 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   faBars = faBars;
   faXmark = faXmark;
-  test: any;
   showMobileMenu: boolean = false;
 
   public screenWidth: any;
 
-  styleTest= {color: 'green'};
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.test = document.querySelectorAll('a');
     this.screenWidth = window.innerWidth;
   }
 

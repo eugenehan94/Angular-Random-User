@@ -15,27 +15,24 @@
     <li class="mobile">
       <fa-icon
         [icon]="faBars"
-        style="color: white; cursor: pointer"
+        class="mobile-open-icon"
         (click)="toggleMobileMenu()"
       ></fa-icon>
     </li>
   </ul>
 </nav>
 
-
 <div
   class="mobile-menu-container"
   [ngClass]="
-    showMobileMenu && screenWidth < 600
-      ? 'show-mobile-menu'
-      : 'mobile-menu'
+    showMobileMenu && screenWidth < 600 ? 'show-mobile-menu' : 'mobile-menu'
   "
 >
   <div class="mobile-menu-close-btn">
     <fa-icon
       [icon]="faXmark"
       (click)="toggleMobileMenu()"
-      style="cursor: pointer; color: red; font-size: 30px"
+      class="mobile-close-icon"
     ></fa-icon>
   </div>
   <ul class="mobile-menu-ul">

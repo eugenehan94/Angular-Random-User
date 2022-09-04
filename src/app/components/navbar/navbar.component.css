@@ -1,5 +1,3 @@
-/* #222 */
-
 nav {
   position: fixed;
   width: 100%;
@@ -31,6 +29,9 @@ a {
   display: none;
 }
 
+.mobile-open-icon {
+  color: white; cursor: pointer
+}
 
 .mobile-menu {
   position: fixed;
@@ -41,7 +42,7 @@ a {
   z-index: -99;
   transform: translate(-100%);
   transition: all 0.3s linear;
-  /* background-color: #222; */
+
   background-color: transparent;
 }
 .show-mobile-menu {
@@ -64,6 +65,10 @@ a {
   display: flex;
   justify-content: flex-end;
   padding: 20px;
+}
+
+.mobile-close-icon{
+  cursor: pointer; color: red; font-size: 30px
 }
 
 .mobile-menu-ul {

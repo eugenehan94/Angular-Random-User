@@ -15,3 +15,7 @@ export const LINK_FOUR_DESCRIPTION =
   'A free, open source API for generating random user data. Like Lorem Ipsum, but for people.';
 
 export const VIEW_API_TEXT = "View API";
+
+export const CARD_ERROR_MESSAGE = " Oops, something went wrong. Please try again later";
+
+export const OPEN_API_TITLE = "Open This API";
