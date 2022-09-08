@@ -15,6 +15,7 @@ import {
   faPhone,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
+import { LinkOneUser } from 'src/app/__helpers/models';
 @Component({
   selector: 'app-home-random-user',
   templateUrl: './home-random-user.component.html',
@@ -28,7 +29,7 @@ export class HomeRandomUserComponent implements OnInit {
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
 
-  user: any = [];
+  user: LinkOneUser[] = [];
   isLoading: boolean = true;
   introText: string = 'Hi, My name is';
   infoText?: string;
@@ -51,7 +52,7 @@ export class HomeRandomUserComponent implements OnInit {
       (response) => {
         this.user = response.results;
         const returnedResult = this.user.find((result: any) => result);
-        this.infoText = `${returnedResult.name.first} ${returnedResult.name.last} `;
+        this.infoText = `${returnedResult?.name.first} ${returnedResult?.name.last} `;
         this.isLoading = false;
       },
       (error) => {

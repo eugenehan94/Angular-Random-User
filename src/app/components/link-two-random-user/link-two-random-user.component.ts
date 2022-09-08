@@ -52,6 +52,7 @@ export class LinkTwoRandomUserComponent implements OnInit {
     this.linkTwoUserService.getLinkTwoUsers().subscribe(
       (response) => {
         this.user = response;
+        console.log("user: ", this.user)
         this.infoText = `${this.user.first_name} ${this.user.last_name}`;
         this.isLoading = false;
       },
