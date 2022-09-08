@@ -22,7 +22,32 @@ export interface LinkOneUser {
 }
 
 export interface LinkTwoUser {
+    address: {
+        street_address: string
+    },
+    avatar: string,
+    date_of_birth: string,
     first_name: string,
     last_name: string,
     email: string,
+    phone_number: string
+}
+
+export interface LinkThreeUser {
+    firstname: string,
+    lastname: string,
+    image: string,
+    email: string,
+    birthday: string,
+    address: {
+        street: string
+    },
+    phone: string
+}
+
+export interface LinkFourUser {
+    avatar: string,
+    first_name: string,
+    last_name: string,
+    email: string
 }

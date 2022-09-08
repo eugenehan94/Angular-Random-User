@@ -16,6 +16,7 @@ import {
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 import { LinkOneUser } from 'src/app/__helpers/models';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-home-random-user',
   templateUrl: './home-random-user.component.html',
@@ -33,7 +34,7 @@ export class HomeRandomUserComponent implements OnInit {
   isLoading: boolean = true;
   introText: string = 'Hi, My name is';
   infoText?: string;
-  error: any;
+  error?: HttpErrorResponse;
 
   @ViewChild('name') name?: ElementRef<HTMLInputElement>;
   @ViewChild('email') email?: ElementRef<HTMLInputElement>;
@@ -62,7 +63,7 @@ export class HomeRandomUserComponent implements OnInit {
     );
   }
 
-  onMouseOver(input: any) {
+  onMouseOver(input: HTMLElement) {
     this.renderer.removeClass(this.name?.nativeElement, 'active')
     this.renderer.removeClass(this.email?.nativeElement, 'active')
     this.renderer.removeClass(this.dob?.nativeElement, 'active')
@@ -73,8 +74,8 @@ export class HomeRandomUserComponent implements OnInit {
 
     let getIntroText = input.getAttribute('data-title');
     let getInfoText = input.getAttribute('data-value');
-    this.introText = getIntroText;
-    this.infoText = getInfoText;
+    this.introText = getIntroText!;
+    this.infoText = getInfoText!;
   }
 }
 

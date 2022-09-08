@@ -15,6 +15,9 @@ import {
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { LinkThreeUser } from '../../__helpers/models';
+import { HttpErrorResponse } from '@angular/common/http';
+
 @Component({
   selector: 'app-link-three-random-user',
   templateUrl: './link-three-random-user.component.html',
@@ -28,12 +31,12 @@ export class LinkThreeRandomUserComponent implements OnInit {
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
   isLoading: boolean = true;
-  user?: any;
+  user?: LinkThreeUser;
 
   introText?: string = 'Hello, my name is';
   infoText?: string = 'Info text';
 
-  error: any;
+  error?: HttpErrorResponse;
 
   @ViewChild('name') name?: ElementRef<HTMLInputElement>;
   @ViewChild('email') email?: ElementRef<HTMLInputElement>;
@@ -56,7 +59,7 @@ export class LinkThreeRandomUserComponent implements OnInit {
         // response.data is an array with one index - thus converted to object
         const obj = { ...response.data[0] };
         this.user = obj;
-        this.infoText = `${this.user.firstname} ${this.user.lastname}`;
+        this.infoText = `${this.user?.firstname} ${this.user?.lastname}`;
         this.isLoading = false;
       },
       (error) => {
@@ -65,7 +68,7 @@ export class LinkThreeRandomUserComponent implements OnInit {
       }
     );
   }
-  onMouseOver(input: any) {
+  onMouseOver(input: HTMLElement) {
     this.renderer.removeClass(this.name?.nativeElement, 'active')
     this.renderer.removeClass(this.email?.nativeElement, 'active')
     this.renderer.removeClass(this.dob?.nativeElement, 'active')
@@ -75,7 +78,7 @@ export class LinkThreeRandomUserComponent implements OnInit {
 
     let getIntroText = input.getAttribute('data-title');
     let getInfoText = input.getAttribute('data-value');
-    this.introText = getIntroText;
-    this.infoText = getInfoText;
+    this.introText = getIntroText!;
+    this.infoText = getInfoText!;
   }
 }

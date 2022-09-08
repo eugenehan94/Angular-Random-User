@@ -14,6 +14,8 @@ import {
   faPhone,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
+import { LinkTwoUser } from 'src/app/__helpers/models';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-link-two-random-user',
   templateUrl: './link-two-random-user.component.html',
@@ -26,12 +28,12 @@ export class LinkTwoRandomUserComponent implements OnInit {
   faHome = faHome;
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
-  user?: any;
+  user?: LinkTwoUser;
   isLoading: boolean = true;
   introText: string = 'Hello, my name is';
-  infoText?: any;
+  infoText?: string;
 
-  error: any;
+  error?: HttpErrorResponse;
 
   @ViewChild('name') name?: ElementRef<HTMLInputElement>;
   @ViewChild('email') email?: ElementRef<HTMLInputElement>;
@@ -52,8 +54,7 @@ export class LinkTwoRandomUserComponent implements OnInit {
     this.linkTwoUserService.getLinkTwoUsers().subscribe(
       (response) => {
         this.user = response;
-        console.log("user: ", this.user)
-        this.infoText = `${this.user.first_name} ${this.user.last_name}`;
+        this.infoText = `${this.user?.first_name} ${this.user?.last_name}`;
         this.isLoading = false;
       },
       (error) => {
@@ -63,7 +64,7 @@ export class LinkTwoRandomUserComponent implements OnInit {
     );
   }
 
-  onMouseOver(input: any): void {
+  onMouseOver(input: HTMLElement): void {
     this.renderer.removeClass(this.name?.nativeElement, 'active')
     this.renderer.removeClass(this.email?.nativeElement, 'active')
     this.renderer.removeClass(this.dob?.nativeElement, 'active')
@@ -74,7 +75,7 @@ export class LinkTwoRandomUserComponent implements OnInit {
 
     let getIntroText = input.getAttribute('data-title');
     let getInfoText = input.getAttribute('data-value');
-    this.introText = getIntroText;
-    this.infoText = getInfoText;
+    this.introText = getIntroText!;
+    this.infoText = getInfoText!;
   }
 }

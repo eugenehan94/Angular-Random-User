@@ -6,13 +6,6 @@
   <!-- Error banner - API is unsuccessful -->
   <div class="link-three-user-card-wrapper" *ngIf="error && !isLoading">
     <app-error-card></app-error-card>
-    <!-- <fa-icon
-      [icon]="faTriangleExclamation"
-      class="icon"
-    ></fa-icon>
-    <div class="error-message">
-      Oops, something went wrong. Please try again later
-    </div> -->
   </div>
   <div class="link-three-user-card-wrapper" *ngIf="!error && !isLoading">
     <img src="{{ user?.image }}" />
@@ -49,7 +42,7 @@
           #address
           (mouseover)="onMouseOver(address)"
           [attr.data-title]="'My address is '"
-          [attr.data-value]="user?.address.street"
+          [attr.data-value]="user?.address?.street"
         >
           <fa-icon [icon]="faHome"></fa-icon>
         </li>

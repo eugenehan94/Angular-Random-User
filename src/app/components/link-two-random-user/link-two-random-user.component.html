@@ -42,7 +42,7 @@
           #address
           (mouseover)="onMouseOver(address)"
           [attr.data-title]="'My address is'"
-          [attr.data-value]="user?.address.street_address"
+          [attr.data-value]="user?.address?.street_address"
         >
           <fa-icon [icon]="faHome"></fa-icon>
         </li>
