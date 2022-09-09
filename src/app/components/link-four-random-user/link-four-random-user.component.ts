@@ -11,7 +11,8 @@ import {
   faEnvelope,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
-import { LinkFourUser } from 'src/app/__helpers/models';
+// import { LinkFourUser } from 'src/app/__helpers/models';
+import { LinkFourUser, LinkFourUserData } from 'src/app/interfaces/link-four-user-data';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-link-four-random-user',
@@ -43,17 +44,17 @@ export class LinkFourRandomUserComponent implements OnInit {
   }
 
   getUser(): void {
-    this.linkFourUserServer.getLinkFourUser().subscribe(
-      (response) => {
+    this.linkFourUserServer.getLinkFourUser().subscribe({
+      next: (response: LinkFourUserData) => {
         this.user = response.data;
         this.infoText = this.user?.first_name + ' ' + this.user?.last_name;
         this.isLoading = false;
       },
-      (error) => {
+      error: (error) => {
         this.error = error;
         this.isLoading = false;
-      }
-    );
+      },
+    });
   }
 
   onMouseOver(input: HTMLElement): void {

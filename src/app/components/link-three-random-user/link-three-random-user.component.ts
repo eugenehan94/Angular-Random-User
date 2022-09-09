@@ -54,26 +54,26 @@ export class LinkThreeRandomUserComponent implements OnInit {
   }
 
   getUser(): void {
-    this.linkThreeUserService.getLinkThreeUser().subscribe(
-      (response) => {
+    this.linkThreeUserService.getLinkThreeUser().subscribe({
+      next: (response) => {
         // response.data is an array with one index - thus converted to object
         const obj = { ...response.data[0] };
         this.user = obj;
         this.infoText = `${this.user?.firstname} ${this.user?.lastname}`;
         this.isLoading = false;
       },
-      (error) => {
+      error: (error) => {
         this.error = error;
         this.isLoading = false;
-      }
-    );
+      },
+    });
   }
   onMouseOver(input: HTMLElement) {
-    this.renderer.removeClass(this.name?.nativeElement, 'active')
-    this.renderer.removeClass(this.email?.nativeElement, 'active')
-    this.renderer.removeClass(this.dob?.nativeElement, 'active')
-    this.renderer.removeClass(this.address?.nativeElement, 'active')
-    this.renderer.removeClass(this.phone?.nativeElement, 'active')
+    this.renderer.removeClass(this.name?.nativeElement, 'active');
+    this.renderer.removeClass(this.email?.nativeElement, 'active');
+    this.renderer.removeClass(this.dob?.nativeElement, 'active');
+    this.renderer.removeClass(this.address?.nativeElement, 'active');
+    this.renderer.removeClass(this.phone?.nativeElement, 'active');
     this.renderer.addClass(input, 'active');
 
     let getIntroText = input.getAttribute('data-title');

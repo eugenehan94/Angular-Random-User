@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   faXmark = faXmark;
   showMobileMenu: boolean = false;
 
-  public screenWidth: any;
+  public screenWidth!: number;
 
   constructor(private router: Router) {}
 
@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
     this.screenWidth = window.innerWidth;
   }
 
-  toggleMobileMenu(input?: any): void {
+  toggleMobileMenu(): void {
     this.showMobileMenu = !this.showMobileMenu;
   }
   @HostListener('window:resize', ['$event'])

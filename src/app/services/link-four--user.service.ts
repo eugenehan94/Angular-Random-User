@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { LinkFourUser } from "../__helpers/models"
+import { LinkFourUserData } from '../interfaces/link-four-user-data';
 @Injectable({
   providedIn: 'root',
 })
@@ -10,7 +11,7 @@ export class LinkFourUserService {
   linkFourUser = `https://reqres.in/api/users/${this.randomNumber}`;
   constructor(private http: HttpClient) {}
 
-  getLinkFourUser(): Observable<any> {
-    return this.http.get<any>(this.linkFourUser);
+  getLinkFourUser(): Observable<LinkFourUserData> {
+    return this.http.get<LinkFourUserData>(this.linkFourUser);
   }
 }

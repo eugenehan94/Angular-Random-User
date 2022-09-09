@@ -51,17 +51,17 @@ export class LinkTwoRandomUserComponent implements OnInit {
   }
 
   getUser(): void {
-    this.linkTwoUserService.getLinkTwoUsers().subscribe(
-      (response) => {
+    this.linkTwoUserService.getLinkTwoUsers().subscribe({
+      next: (response) => {
         this.user = response;
         this.infoText = `${this.user?.first_name} ${this.user?.last_name}`;
         this.isLoading = false;
       },
-      (error) => {
+      error: (error) => {
         this.error = error;
         this.isLoading = false;
       }
-    );
+  });
   }
 
   onMouseOver(input: HTMLElement): void {
