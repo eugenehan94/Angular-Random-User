@@ -11,7 +11,6 @@ import {
   faEnvelope,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
-// import { LinkFourUser } from 'src/app/__helpers/models';
 import { LinkFourUser, LinkFourUserData } from 'src/app/interfaces/link-four-user-data';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({

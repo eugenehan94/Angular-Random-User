@@ -15,7 +15,7 @@ import {
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { LinkThreeUser } from '../../__helpers/models';
+import { LinkThreeUser, LinkThreeUserData } from 'src/app/interfaces/link-three-user-data';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -55,7 +55,7 @@ export class LinkThreeRandomUserComponent implements OnInit {
 
   getUser(): void {
     this.linkThreeUserService.getLinkThreeUser().subscribe({
-      next: (response) => {
+      next: (response: LinkThreeUserData) => {
         // response.data is an array with one index - thus converted to object
         const obj = { ...response.data[0] };
         this.user = obj;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LinkTwoUserData } from '../interfaces/link-two-user-data';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class LinkTwoUserService {
 
   constructor(private http: HttpClient) {}
 
-  getLinkTwoUsers(): Observable<any> {
-    return this.http.get<any>(this.linkTwoUser);
+  getLinkTwoUsers(): Observable<LinkTwoUserData> {
+    return this.http.get<LinkTwoUserData>(this.linkTwoUser);
   }
 }

@@ -13,6 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  // Note: Use the useHash: true for Github pages
   imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })

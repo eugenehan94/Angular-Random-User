@@ -15,7 +15,8 @@ import {
   faPhone,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
-import { LinkOneUser } from 'src/app/__helpers/models';
+
+import { LinkOneUser } from 'src/app/interfaces/link-one-user-data';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

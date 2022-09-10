@@ -14,7 +14,7 @@ import {
   faPhone,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
-import { LinkTwoUser } from 'src/app/__helpers/models';
+import { LinkTwoUserData } from 'src/app/interfaces/link-two-user-data';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-link-two-random-user',
@@ -28,7 +28,7 @@ export class LinkTwoRandomUserComponent implements OnInit {
   faHome = faHome;
   faPhone = faPhone;
   faTriangleExclamation = faTriangleExclamation;
-  user?: LinkTwoUser;
+  user?: LinkTwoUserData;
   isLoading: boolean = true;
   introText: string = 'Hello, my name is';
   infoText?: string;

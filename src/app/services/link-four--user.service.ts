@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LinkFourUser } from "../__helpers/models"
 import { LinkFourUserData } from '../interfaces/link-four-user-data';
 @Injectable({
   providedIn: 'root',
