@@ -1,7 +1,8 @@
 <nav>
   <ul>
     <li class="desktop">
-      <a #testing routerLink="/home" routerLinkActive="active">Link One</a>
+      <!-- routerLinkActive activates the class "active" when the applicable link is selected -->
+      <a routerLink="/home" routerLinkActive="active">Link One</a>
     </li>
     <li class="desktop">
       <a routerLink="/link-two" routerLinkActive="active">Link Two</a>
@@ -22,6 +23,8 @@
   </ul>
 </nav>
 
+<!-- Mobile Menu -->
+<!-- the ngClass will attach the applicable class as per condition -->
 <div
   class="mobile-menu-container"
   [ngClass]="
@@ -29,6 +32,7 @@
   "
 >
   <div class="mobile-menu-close-btn">
+    <h1>Test: {{ currentPageMobileMenu }}</h1>
     <fa-icon
       [icon]="faXmark"
       (click)="toggleMobileMenu()"
@@ -37,16 +41,36 @@
   </div>
   <ul class="mobile-menu-ul">
     <li>
-      <a routerLink="/home" (click)="toggleMobileMenu()">Link One</a>
+      <a
+        routerLink="/home"
+        (click)="toggleMobileMenu()"
+        routerLinkActive="active"
+        >Link One</a
+      >
     </li>
     <li>
-      <a routerLink="/link-two" (click)="toggleMobileMenu()">Link Two</a>
+      <a
+        routerLink="/link-two"
+        (click)="toggleMobileMenu()"
+        routerLinkActive="active"
+        >Link Two</a
+      >
     </li>
     <li>
-      <a routerLink="/link-three" (click)="toggleMobileMenu()">Link Three </a>
+      <a
+        routerLink="/link-three"
+        (click)="toggleMobileMenu()"
+        routerLinkActive="active"
+        >Link Three
+      </a>
     </li>
     <li>
-      <a routerLink="/link-four" (click)="toggleMobileMenu()">Link Four</a>
+      <a
+        routerLink="/link-four"
+        (click)="toggleMobileMenu()"
+        routerLinkActive="active"
+        >Link Four</a
+      >
     </li>
   </ul>
 </div>
