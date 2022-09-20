@@ -32,47 +32,60 @@
   "
 >
   <div class="mobile-menu-close-btn">
-    <h1>Test: {{ currentPageMobileMenu }}</h1>
     <fa-icon
       [icon]="faXmark"
-      (click)="toggleMobileMenu()"
+      (click)="toggleMobileMenu(currentPageMobileMenu)"
       class="mobile-close-icon"
     ></fa-icon>
   </div>
   <ul class="mobile-menu-ul">
     <li>
       <a
+      #mobileMenuLinkOne
         routerLink="/home"
-        (click)="toggleMobileMenu()"
+        (click)="toggleMobileMenu(mobileMenuLinkOne)"
         routerLinkActive="active"
         >Link One</a
       >
     </li>
     <li>
       <a
+      #mobileMenuLinkTwo
         routerLink="/link-two"
-        (click)="toggleMobileMenu()"
+        (click)="toggleMobileMenu(mobileMenuLinkTwo)"
         routerLinkActive="active"
         >Link Two</a
       >
     </li>
     <li>
       <a
+        #mobileMenuLinkThree
         routerLink="/link-three"
-        (click)="toggleMobileMenu()"
+        (click)="toggleMobileMenu(mobileMenuLinkThree)"
         routerLinkActive="active"
         >Link Three
       </a>
     </li>
     <li>
       <a
+        #mobileMenuLinkFour
         routerLink="/link-four"
-        (click)="toggleMobileMenu()"
+        (click)="toggleMobileMenu(mobileMenuLinkFour)"
         routerLinkActive="active"
         >Link Four</a
       >
     </li>
   </ul>
+  <div class="mobile-menu-footer">
+    <div>
+      <p style="color: white; text-align: center;">
+        &#169; {{ year }} by
+        <span class="personal-link" (click)="openPersonalWebsite()"
+          >Eugene Han</span
+        >. All rights reserved.
+      </p>
+    </div>
+  </div>
 </div>
 
 <!-- https://stackoverflow.com/questions/59200492/how-to-pass-variable-to-css-in-angular -->

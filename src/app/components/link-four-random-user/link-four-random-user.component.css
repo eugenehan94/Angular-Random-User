@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   /* height: 350px; */
+
 }
 .link-four-user-card-wrapper {
   margin-top: -200px;
@@ -16,7 +17,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: relative;
 }
+
+.link-four-user-card-wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  top: 0;
+  background: #b72a2a;
+  z-index: 1;
+}
+
 .error-message {
   text-align: center;
   letter-spacing: 2px;
@@ -27,10 +42,13 @@
   color: red;
   font-size: 30px;
 }
+
+/* Make sure the image sits above the design: z-index */
 .link-four-user-card-wrapper img {
   width: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
+  z-index: 10;
 }
 
 .introText {
