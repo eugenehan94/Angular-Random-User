@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
     this.routerEvent.unsubscribe();
   }
   // Toggles the open/close state of the Mobile menu
-  toggleMobileMenu(input?: any): void {
+  toggleMobileMenu(): void {
     this.showMobileMenu = !this.showMobileMenu;
   }
 

@@ -34,43 +34,39 @@
   <div class="mobile-menu-close-btn">
     <fa-icon
       [icon]="faXmark"
-      (click)="toggleMobileMenu(currentPageMobileMenu)"
+      (click)="toggleMobileMenu()"
       class="mobile-close-icon"
     ></fa-icon>
   </div>
   <ul class="mobile-menu-ul">
     <li>
       <a
-      #mobileMenuLinkOne
         routerLink="/home"
-        (click)="toggleMobileMenu(mobileMenuLinkOne)"
+        (click)="toggleMobileMenu()"
         routerLinkActive="active"
         >Link One</a
       >
     </li>
     <li>
       <a
-      #mobileMenuLinkTwo
         routerLink="/link-two"
-        (click)="toggleMobileMenu(mobileMenuLinkTwo)"
+        (click)="toggleMobileMenu()"
         routerLinkActive="active"
         >Link Two</a
       >
     </li>
     <li>
       <a
-        #mobileMenuLinkThree
         routerLink="/link-three"
-        (click)="toggleMobileMenu(mobileMenuLinkThree)"
+        (click)="toggleMobileMenu()"
         routerLinkActive="active"
         >Link Three
       </a>
     </li>
     <li>
       <a
-        #mobileMenuLinkFour
         routerLink="/link-four"
-        (click)="toggleMobileMenu(mobileMenuLinkFour)"
+        (click)="toggleMobileMenu()"
         routerLinkActive="active"
         >Link Four</a
       >
