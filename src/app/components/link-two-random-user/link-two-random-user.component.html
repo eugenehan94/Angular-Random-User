@@ -7,8 +7,10 @@
   <div class="link-two-user-card-wrapper" *ngIf="error">
     <app-error-card></app-error-card>
   </div>
-  <div class="link-two-user-card-wrapper" *ngIf="!error">
-    <img src="{{ user?.avatar }}" />
+  <div class="link-two-user-card-wrapper-success" *ngIf="!error">
+    <div class="img-border">
+      <img src="{{ user?.avatar }}" />
+    </div>
     <p class="introText">{{ introText }}</p>
     <p class="infoText">{{ infoText }}</p>
     <div>

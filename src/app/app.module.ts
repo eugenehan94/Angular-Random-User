@@ -24,6 +24,8 @@ import { HomeOpenApiComponent } from './components/home-open-api/home-open-api.c
 import { FooterComponent } from './components/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ErrorCardComponent } from './components/error-card/error-card.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { ErrorCardComponent } from './components/error-card/error-card.component
     HomeOpenApiComponent,
     FooterComponent,
     LoaderComponent,
-    ErrorCardComponent
+    ErrorCardComponent,
+    ContactUsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

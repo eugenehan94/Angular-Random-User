@@ -7,10 +7,13 @@
   <div class="link-three-user-card-wrapper" *ngIf="error && !isLoading">
     <app-error-card></app-error-card>
   </div>
-  <div class="link-three-user-card-wrapper-success" *ngIf="!error && !isLoading">
-    
-    <img src="{{ user?.image }}" />
-    
+  <div
+    class="link-three-user-card-wrapper-success"
+    *ngIf="!error && !isLoading"
+  >
+    <div class="img-border">
+      <img src="{{ user?.image }}" />
+    </div>
     <p class="introText">{{ introText }}</p>
     <p class="infoText">{{ infoText }}</p>
     <div>

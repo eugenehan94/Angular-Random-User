@@ -7,8 +7,10 @@
   <div class="random-user-card-wrapper" *ngIf="error">
     <app-error-card></app-error-card>
   </div>
-  <div class="random-user-card-wrapper" *ngFor="let person of user">
-    <img src="{{ person.picture.large }}" />
+  <div class="random-user-card-wrapper-success" *ngFor="let person of user">
+    <div class="img-border">
+      <img src="{{ person.picture.large }}" />
+    </div>
     <p class="introText">{{ introText }}</p>
     <p class="infoText">{{ infoText }}</p>
     <div>

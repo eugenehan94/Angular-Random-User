@@ -53,16 +53,28 @@
   width: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
+  height: 150px;
 }
 
 .icon {
   color: red;
   font-size: 30px;
 }
+
+.img-border {
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 5px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
 .introText {
-  color: rgb(133, 129, 129);
+  color: rgb(26, 24, 24);
   font-size: 18px;
   margin: 0;
+  font-weight: bold;
 }
 .infoText {
   color: #2c2e31;
@@ -86,7 +98,7 @@
 @media only screen and (max-width: 600px) {
   .link-three-user-card-wrapper-success {
     margin-top: -120px;
-    width: 80%;
+    width: 75%;
     border-radius: 0;
     padding: 30px;
   }

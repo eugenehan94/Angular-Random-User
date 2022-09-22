@@ -1,0 +1,15 @@
+.contact-container {
+    background-color: #2c2e31;
+    height: 100vh;
+    /* padding-top to avoid navbar overlap */
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    width: 80%;
+    height: 50%;
+}

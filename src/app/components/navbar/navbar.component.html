@@ -13,6 +13,9 @@
     <li class="desktop">
       <a routerLink="/link-four" routerLinkActive="active">Link Four</a>
     </li>
+    <li class="desktop">
+      <a routerLink="/contact-us" routerLinkActive="active">Contact Us</a>
+    </li>
     <li class="mobile">
       <fa-icon
         [icon]="faBars"
@@ -66,6 +69,14 @@
     <li>
       <a
         routerLink="/link-four"
+        (click)="toggleMobileMenu()"
+        routerLinkActive="active"
+        >Link Four</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/contact-us"
         (click)="toggleMobileMenu()"
         routerLinkActive="active"
         >Link Four</a
