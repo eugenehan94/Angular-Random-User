@@ -12,6 +12,7 @@ import {
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 import { LinkFourUser, LinkFourUserData } from 'src/app/interfaces/link-four-user-data';
+// HttpErrorResponse allow you to use the Angular HTTP request (get, put, post, delete, etc.)
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-link-four-random-user',
@@ -19,9 +20,11 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./link-four-random-user.component.css'],
 })
 export class LinkFourRandomUserComponent implements OnInit {
+  // Font Awesome Icons
   faUser = faUser;
   faEnvelope = faEnvelope;
   faTriangleExclamation = faTriangleExclamation;
+  
   isLoading: boolean = true;
   user?: LinkFourUser;
 
@@ -33,6 +36,12 @@ export class LinkFourRandomUserComponent implements OnInit {
   @ViewChild('name') name?: ElementRef<HTMLInputElement>;
   @ViewChild('email') email?: ElementRef<HTMLInputElement>;
 
+  // The Renderer2 allows us to manipulate the DOM elements, without accessing the
+  // DOM directly. It provides a layer of abstraction between the DOM element and the
+  // component code. Using Renderer2 we can create an element, add a text node to it,
+  // append child element using the appendchild method., etc. We can also add or
+  // remove styles, HTML attributes, CSS Classes & properties, etc. We can also attach
+  // and listen to events etc.
   constructor(
     private linkFourUserServer: LinkFourUserService,
     private renderer: Renderer2
@@ -41,7 +50,8 @@ export class LinkFourRandomUserComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
   }
-
+  // According to Rxjs library documentation, the subscribe only supports one object now,
+  // thus put the next, error and complete in one object as seen below
   getUser(): void {
     this.linkFourUserServer.getLinkFourUser().subscribe({
       next: (response: LinkFourUserData) => {
@@ -55,7 +65,7 @@ export class LinkFourRandomUserComponent implements OnInit {
       },
     });
   }
-
+  // The input is the DOM <li> element
   onMouseOver(input: HTMLElement): void {
     this.renderer.removeClass(this.name?.nativeElement, 'active');
     this.renderer.removeClass(this.email?.nativeElement, 'active');

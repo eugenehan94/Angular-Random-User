@@ -8,42 +8,33 @@
   <div class="link-four-user-card-wrapper" *ngIf="error && !isLoading">
     <app-error-card></app-error-card>
   </div>
-  <div class="link-four-user-card-wrapper" *ngIf="!error && !isLoading">
-    <div
-      style="
-        z-index: 10;
-        background-color: rgba(255, 255, 255, 0.6);
-        padding: 5px;
-        height: 150px;
-        border-radius: 50%;
-        margin-bottom: 30px;
-      "
-    >
+  <div class="link-four-user-card-wrapper-success" *ngIf="!error && !isLoading">
+    <div class="img-border">
       <img src="{{ user?.avatar }}" />
     </div>
-   
-      <p class="introText">{{ introText }}</p>
-      <p class="infoText">{{ infoText }}</p>
-      <div>
-        <ul>
-          <li
-            #name
-            (mouseover)="onMouseOver(name)"
-            [attr.data-title]="'Hello, my name is '"
-            [attr.data-value]="user?.first_name + ' ' + user?.last_name"
-            class="active"
-          >
-            <fa-icon [icon]="faUser"></fa-icon>
-          </li>
-          <li
-            #email
-            (mouseover)="onMouseOver(email)"
-            [attr.data-title]="'My email address is '"
-            [attr.data-value]="user?.email"
-          >
-            <fa-icon [icon]="faEnvelope"></fa-icon>
-          </li>
-        </ul>
-      </div>
+
+    <p class="introText">{{ introText }}</p>
+    <p class="infoText">{{ infoText }}</p>
+    <div>
+      <ul>
+        <li
+          #name
+          (mouseover)="onMouseOver(name)"
+          [attr.data-title]="'Hello, my name is '"
+          [attr.data-value]="user?.first_name + ' ' + user?.last_name"
+          class="active"
+        >
+          <fa-icon [icon]="faUser"></fa-icon>
+        </li>
+        <li
+          #email
+          (mouseover)="onMouseOver(email)"
+          [attr.data-title]="'My email address is '"
+          [attr.data-value]="user?.email"
+        >
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

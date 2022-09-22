@@ -3,17 +3,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 350px; */
-
 }
+
 .link-four-user-card-wrapper {
   margin-top: -200px;
   margin-bottom: 10px;
-  background-image: url("../../../assets/sand.jpg");
-  /* background-color: #ffffff; */
+  background-color: #ffffff;
   padding: 20px;
   width: 80%;
-  /* border-radius: 10px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* added a -success because when the error or loading state occurs
+we don't want to see the background image */
+.link-four-user-card-wrapper-success {
+  margin-top: -200px;
+  margin-bottom: 10px;
+  background-image: url("../../../assets/sand.jpg");
+  padding: 20px;
+  width: 80%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
@@ -22,7 +33,7 @@
   position: relative;
 }
 
-.link-four-user-card-wrapper::after {
+.link-four-user-card-wrapper-success::after {
   background-image: url("../../../assets/waterWaves.jpg");
   content: "";
   display: block;
@@ -44,8 +55,17 @@
   font-size: 30px;
 }
 
+.img-border {
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 5px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
 /* Make sure the image sits above the design: z-index */
-.link-four-user-card-wrapper img {
+.link-four-user-card-wrapper-success img {
   width: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
@@ -64,11 +84,11 @@
   margin: 5px;
 }
 
-.link-four-user-card-wrapper ul {
+.link-four-user-card-wrapper-success ul {
   list-style-type: none;
   padding: 0;
 }
-.link-four-user-card-wrapper ul > li {
+.link-four-user-card-wrapper-success ul > li {
   display: inline-block;
   padding: 10px 20px;
   cursor: pointer;
@@ -80,8 +100,12 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .link-four-user-card-wrapper {
+    margin-top: -120px;  
+    width: 75%;
+  }
+  .link-four-user-card-wrapper-success {
     margin-top: -120px;
-    width: 80%;
+    width: 75%;
     border-radius: 0;
     padding: 30px;
   }

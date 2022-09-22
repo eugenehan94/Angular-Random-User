@@ -1,3 +1,5 @@
+/* Make sure the z-index is the highest among all components
+so the navbar stays on the top. */
 nav {
   position: fixed;
   width: 100%;
@@ -43,7 +45,6 @@ a {
   z-index: -99;
   transform: translate(-100%);
   transition: all 0.3s linear;
-
   background-color: transparent;
 }
 .show-mobile-menu {
@@ -53,7 +54,7 @@ a {
   width: 100%;
   height: 100%;
   background-color: #222;
-  z-index: 99;
+  z-index: 99999999;
   transform: translate(0);
   transition: all 0.3s linear;
 }
@@ -76,9 +77,6 @@ a {
   font-size: 30px;
 }
 
-/* .mobile-menu-ul {
-  height: 100%;
-} */
 .mobile-menu-ul li {
   padding: 1rem 0;
 }
