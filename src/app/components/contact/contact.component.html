@@ -17,11 +17,16 @@
       <p>Great vision without great people is irrelevant</p>
       <p>Let's work together</p>
 
-      <label for ="name">Name:</label>
-      <input id="name" type="text" [formControl]="name">
-      <p>Input - Enter a valid email address</p>
-      <p>Input - Enter your message</p>
-      <p>Submit button</p>
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <label for="first-name">First Name:</label>
+        <input id="first-name" type="text" formControlName="firstName">
+        <label for="last-name">Last Name:</label>
+        <input id="last-name" type="text" formControlName="lastName">
+        <label for="email" type="text">Email</label>
+        <input id="email" type="email" formControlName="email">
+        <p>Input - Enter your message</p>
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+      </form>
     </div>
   </div>
 </div>
