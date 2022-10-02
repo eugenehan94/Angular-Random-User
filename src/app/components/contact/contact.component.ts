@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit {
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
-    email: ['', Validators.required]
+    email: ['', [Validators.required, Validators.email]]
   })
 
   constructor(private fb: FormBuilder) {}
@@ -37,6 +37,6 @@ export class ContactComponent implements OnInit {
 
   onSubmit(){
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value)
+    console.warn(this.profileForm)
   }
 }

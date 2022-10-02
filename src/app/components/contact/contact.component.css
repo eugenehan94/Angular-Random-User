@@ -17,3 +17,7 @@
     width: 80%;
     height: 70%;
 }
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
