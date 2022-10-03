@@ -1,34 +1,62 @@
 <div class="contact-container">
-  <h1>Contact Us</h1>
-  <div class="contact-card">
-    <div>
-      <h1>Need to Reach Us?</h1>
-      <p>Our mailing address is:</p>
-      <p>150A Charlotte Street</p>
-      <p>Peterborough ON</p>
-      <p>Phone: 705-742-3221</p>
-      <div>
-        <fa-icon [icon]="faFacebookF"></fa-icon>
-        <fa-icon [icon]="faTwitter"></fa-icon>
-        <fa-icon [icon]="faInstagram"></fa-icon>
+  <div class="contact-wrapper">
+    <h1>Contact Us</h1>
+    <div class="contact-card">
+      <div class="contact-info">
+        <h1>Need to Reach Us?</h1>
+        <p>Our mailing address is:</p>
+        <p>150A Charlotte Street</p>
+        <p>Peterborough ON</p>
+        <p>Phone: 705-742-3221</p>
+        <div class="contact-social-wrapper">
+          <fa-icon [icon]="faFacebookF" class="contact-social-icon"></fa-icon>
+          <fa-icon [icon]="faTwitter" class="contact-social-icon"></fa-icon>
+          <fa-icon [icon]="faInstagram" class="contact-social-icon"></fa-icon>
+        </div>
       </div>
-    </div>
-    <div>
-      <p>Great vision without great people is irrelevant</p>
-      <p>Let's work together</p>
+      <div class="contact-input">
+        <form
+          [formGroup]="profileForm"
+          (ngSubmit)="onSubmit()"
+          class="contact-form-container"
+        >
+          <label for="first-name">First Name:</label>
+          <div>
+            <input
+              id="first-name"
+              type="text"
+              formControlName="firstName"
+              class="contact-form-input"
+            />
+          </div>
+          <label for="last-name">Last Name:</label>
+          <div>
+            <input
+              id="last-name"
+              type="text"
+              formControlName="lastName"
+              class="contact-form-input"
+            />
+          </div>
 
-      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <label for="first-name">First Name:</label>
-        <input id="first-name" type="text" formControlName="firstName">
-        <label for="last-name">Last Name:</label>
-        <input id="last-name" type="text" formControlName="lastName">
-        <label for="email" type="text">Email</label>
-        <input id="email" type="email" formControlName="email">
-        <p>Input - Enter your message</p>
-        <p>Complete the form to enable button.</p>
-        <!-- <button type="submit" [disabled]="!profileForm.valid">Submit</button> -->
-        <button type="submit">Submit</button>
-      </form>
+          <label for="email" type="text">Email</label>
+          <div>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              class="contact-form-input"
+            />
+          </div>
+          <span style="color: red" *ngIf="">The email you entered is not a valid email.</span>
+          <!-- <p>Input - Enter your message</p>
+        <p>Complete the form to enable button.</p> -->
+          <!-- <button type="submit" [disabled]="!profileForm.valid">Submit</button> -->
+          <div class="submit-btn-wrapper">
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
