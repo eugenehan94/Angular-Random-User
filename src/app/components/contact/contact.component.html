@@ -1,6 +1,6 @@
 <div class="contact-container">
   <div class="contact-wrapper">
-    <h1>Contact Us</h1>
+    <h1 class="contact-title">Contact Us</h1>
     <div class="contact-card">
       <div class="contact-info">
         <h1>Need to Reach Us?</h1>
@@ -29,6 +29,27 @@
               class="contact-form-input"
             />
           </div>
+          <p
+            class="input-captions"
+            *ngIf="
+              !profileForm.get('firstName')?.valid &&
+              profileForm.get('firstName')?.touched &&
+              profileForm.get('firstName')?.value === ''
+            "
+          >
+            Please enter a first name
+          </p>
+          <!-- @TODO: See if you can add some validation for invalid names -->
+          <p
+            class="input-captions"
+            *ngIf="
+              !profileForm.get('firstName')?.valid &&
+              profileForm.get('firstName')?.touched &&
+              profileForm.get('firstName')?.value !== ''
+            "
+          >
+            Please enter valid first name.
+          </p>
           <label for="last-name">Last Name:</label>
           <div>
             <input
@@ -38,7 +59,26 @@
               class="contact-form-input"
             />
           </div>
-
+          <p
+            class="input-captions"
+            *ngIf="
+              !profileForm.get('lastName')?.valid &&
+              profileForm.get('lastName')?.touched &&
+              profileForm.get('lastName')?.value === ''
+            "
+          >
+            Please enter a lastname
+          </p>
+          <p
+            class="input-captions"
+            *ngIf="
+              !profileForm.get('lastName')?.valid &&
+              profileForm.get('lastName')?.touched &&
+              profileForm.get('lastName')?.value !== ''
+            "
+          >
+            Please enter valid lastname
+          </p>
           <label for="email" type="text">Email</label>
           <div>
             <input
@@ -48,14 +88,39 @@
               class="contact-form-input"
             />
           </div>
-          <span style="color: red" *ngIf="">The email you entered is not a valid email.</span>
-          <!-- <p>Input - Enter your message</p>
-        <p>Complete the form to enable button.</p> -->
-          <!-- <button type="submit" [disabled]="!profileForm.valid">Submit</button> -->
+          <p
+            class="input-captions"
+            *ngIf="
+              !profileForm.get('email')?.valid &&
+              profileForm.get('email')?.touched &&
+              profileForm.get('email')?.value === ''
+            "
+          >
+            Please enter an email
+          </p>
+          <p
+            class="input-captions"
+            *ngIf="
+              !profileForm.get('email')?.valid &&
+              profileForm.get('email')?.touched &&
+              profileForm.get('email')?.value !== ''
+            "
+          >
+            The email you entered is not a valid email.
+          </p>
+
           <div class="submit-btn-wrapper">
+            <!-- <button
+              class="submit-btn"
+              type="submit"
+              [disabled]="!profileForm.valid"
+            >
+              Submit
+            </button> -->
             <button type="submit" class="submit-btn">Submit</button>
           </div>
         </form>
+        <app-snackbar></app-snackbar>
       </div>
     </div>
   </div>

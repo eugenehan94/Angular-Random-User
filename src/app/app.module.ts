@@ -27,6 +27,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ErrorCardComponent } from './components/error-card/error-card.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ContactComponent } from './components/contact/contact.component';
     LoaderComponent,
     ErrorCardComponent,
     ContactUsComponent,
-    ContactComponent
+    ContactComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,

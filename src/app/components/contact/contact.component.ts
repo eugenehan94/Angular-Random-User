@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from "@angular/forms"
-import { FormBuilder } from "@angular/forms";
-import { Validators } from "@angular/forms";
+import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import {
   faFacebookF,
   faInstagram,
@@ -17,6 +17,7 @@ export class ContactComponent implements OnInit {
   faInstagram = faInstagram;
   faTwitter = faTwitter;
 
+  submitClicked = false;
   // profileForm = new FormGroup({
   //   firstName: new FormControl(''),
   //   lastName: new FormControl(''),
@@ -24,19 +25,29 @@ export class ContactComponent implements OnInit {
   // })
 
   profileForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]]
-  })
+    //  Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$') - allows letter inputs only.
+    // Numbers will prompt invalid input.
+    firstName: [
+      '',
+      [Validators.required, Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$')],
+    ],
+    lastName: [
+      '',
+      [Validators.required, Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$')],
+    ],
+    email: ['', [Validators.required, Validators.email]],
+  });
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    console.log("profileForm: ", this.profileForm)
+    console.log('profileForm: ', this.profileForm);
   }
 
-  onSubmit(){
+  onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm)
+    console.warn(this.profileForm);
+    this.profileForm.reset();
+    this.submitClicked = true;
   }
 }
