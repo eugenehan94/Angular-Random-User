@@ -120,7 +120,7 @@
             <button type="submit" class="submit-btn">Submit</button>
           </div>
         </form>
-        <app-snackbar></app-snackbar>
+        <app-snackbar [submitClicked]="submitClicked" (submitUnclick)="closeSnackbar()"></app-snackbar>
       </div>
     </div>
   </div>

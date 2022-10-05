@@ -18,6 +18,7 @@ export class ContactComponent implements OnInit {
   faTwitter = faTwitter;
 
   submitClicked = false;
+  myTimeout: any;
   // profileForm = new FormGroup({
   //   firstName: new FormControl(''),
   //   lastName: new FormControl(''),
@@ -44,10 +45,21 @@ export class ContactComponent implements OnInit {
     console.log('profileForm: ', this.profileForm);
   }
 
+  ngOnDestroy(): void {
+    clearTimeout(this.myTimeout)
+  }
+
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm);
+    // console.warn(this.profileForm);
     this.profileForm.reset();
+
     this.submitClicked = true;
+    console.log("submitClicked: ", this.submitClicked)
+    // this.myTimeout = setTimeout(() => {this.submitClicked=false }, 3000); 
+  }
+  closeSnackbar () {
+    console.log("CloseSnackBar CALLED")
+    this.submitClicked = false;
   }
 }

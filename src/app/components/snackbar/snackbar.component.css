@@ -1,14 +1,55 @@
 .snackbar-container {
-    /* visibility: hidden; Hidden by default. Visible on click */
+    visibility: hidden; 
+    /* Hidden by default. Visible on click */
     /* min-width: 250px; Set a default minimum width */
-    margin-left: -125px; /*Divide value of min-width by 2*/
-    background-color: #333; /* Black background color */
+    /* margin-left: -125px; Divide value of min-width by 2 */
+    background-color: #2e7d32;
     color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 10px; /* Rounded borders */
+    /* text-align: center; Centered text */
+    border-radius: 4px;
     padding: 2px 20px; /* Padding */
     position: fixed; /* Sit on top of the screen */
     z-index: 999999; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
-    bottom: 10px; /* 30px from the bottom */
+    /* left: 50%; /* Center the snackbar */
+    bottom: 1px; 
+    /* 30px from the bottom  */
+    font-weight: 500;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    width: 90%;
+    margin: 1% auto;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.snackbar-container.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    animation: fadein, fadeout;
+  }
+
+
+/* Animations to fade the snackbar in and out */
+
+  
+  @keyframes fadein {
+    from { opacity: 0;}
+    to { opacity: 1;}
+  }
+  
+  @keyframes fadeout {
+    from { opacity: 1;}
+    to { opacity: 0;}
+  }
+
+.snackbar-message-icon {
+    margin-right: 3px;
+}
+.x-mark {
+    cursor: pointer;
 }

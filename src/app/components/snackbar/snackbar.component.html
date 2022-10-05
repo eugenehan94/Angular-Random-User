@@ -1,3 +1,7 @@
-<div class="snackbar-container">
-  <p>Snackbar</p>
+<div class="snackbar-container" [ngClass]="submitClicked ? 'show':' '">
+  <p class="snackbar-message">
+    <fa-icon [icon]="faGgCircle" class="snackbar-message-icon"></fa-icon>Your
+    data was submitted.
+  </p>
+  <p class="x-mark" (click)="closeSnackbarOnClick()">X</p>
 </div>
