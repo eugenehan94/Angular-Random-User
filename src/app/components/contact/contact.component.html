@@ -15,6 +15,7 @@
         </div>
       </div>
       <div class="contact-input">
+        <!-- Reactive Form here. The "profileForm" is found in the applicable TS file -->
         <form
           [formGroup]="profileForm"
           (ngSubmit)="onSubmit()"
@@ -22,6 +23,7 @@
         >
           <label for="first-name">First Name:</label>
           <div>
+            <!-- formControlName links the input with the applicable reactive form property in the TS file -->
             <input
               id="first-name"
               type="text"
@@ -29,6 +31,7 @@
               class="contact-form-input"
             />
           </div>
+          <!-- If the firstname input is empty, then this message displays -->
           <p
             class="input-captions"
             *ngIf="
@@ -39,7 +42,8 @@
           >
             Please enter a first name
           </p>
-          <!-- @TODO: See if you can add some validation for invalid names -->
+          <!-- If the firstname doesn't satify the validators as seen in the TS file,
+          this message will be displayed -->
           <p
             class="input-captions"
             *ngIf="
@@ -88,6 +92,7 @@
               class="contact-form-input"
             />
           </div>
+          <!-- If the email input is clicked and unclick this message will display. -->
           <p
             class="input-captions"
             *ngIf="
@@ -98,11 +103,11 @@
           >
             Please enter an email
           </p>
+          <!-- As long as the provided email is no valid, this message will show -->
           <p
             class="input-captions"
             *ngIf="
               !profileForm.get('email')?.valid &&
-              profileForm.get('email')?.touched &&
               profileForm.get('email')?.value !== ''
             "
           >
@@ -110,17 +115,27 @@
           </p>
 
           <div class="submit-btn-wrapper">
-            <!-- <button
+            <!-- [disabled]="!profileForm.valid" 
+            if none of the inputs are valid the submit button will be disabled-->
+            <button
               class="submit-btn"
               type="submit"
               [disabled]="!profileForm.valid"
             >
               Submit
-            </button> -->
-            <button type="submit" class="submit-btn">Submit</button>
+            </button>
+            <!-- <button type="submit" class="submit-btn">Submit</button> -->
           </div>
         </form>
-        <app-snackbar [submitClicked]="submitClicked" (submitUnclick)="closeSnackbar()"></app-snackbar>
+        <!-- snackbar is the child component.
+        [submitClicked] is the @Input() of the child component. 
+        We are passing the "submitClicked" down.
+      (submitUnclick) is the @Output() of the child component. 
+      We are sending the value up from child component. -->
+        <app-snackbar
+          [submitClicked]="submitClicked"
+          (submitUnclick)="closeSnackbar()"
+        ></app-snackbar>
       </div>
     </div>
   </div>

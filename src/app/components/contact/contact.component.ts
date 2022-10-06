@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import {
@@ -17,17 +16,12 @@ export class ContactComponent implements OnInit {
   faInstagram = faInstagram;
   faTwitter = faTwitter;
 
-  submitClicked = false;
-  myTimeout: any;
-  // profileForm = new FormGroup({
-  //   firstName: new FormControl(''),
-  //   lastName: new FormControl(''),
-  //   email: new FormControl(''),
-  // })
+  submitClicked: boolean = false;
 
   profileForm = this.fb.group({
     //  Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$') - allows letter inputs only.
     // Numbers will prompt invalid input.
+    // Validators.required - input can't be blank
     firstName: [
       '',
       [Validators.required, Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$')],
@@ -36,30 +30,20 @@ export class ContactComponent implements OnInit {
       '',
       [Validators.required, Validators.pattern('^[A-Za-zñÑáéíóúÁÉÍÓÚ ]+$')],
     ],
+    // Validators.email - checks for the @ as seen in emails
     email: ['', [Validators.required, Validators.email]],
   });
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    console.log('profileForm: ', this.profileForm);
-  }
+  ngOnInit(): void {}
 
-  ngOnDestroy(): void {
-    clearTimeout(this.myTimeout)
-  }
-
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    // console.warn(this.profileForm);
+  onSubmit(): void {
+    // .reset() is provided by reactive form to clear inputs in form.s
     this.profileForm.reset();
-
     this.submitClicked = true;
-    console.log("submitClicked: ", this.submitClicked)
-    // this.myTimeout = setTimeout(() => {this.submitClicked=false }, 3000); 
   }
-  closeSnackbar () {
-    console.log("CloseSnackBar CALLED")
+  closeSnackbar(): void {
     this.submitClicked = false;
   }
 }

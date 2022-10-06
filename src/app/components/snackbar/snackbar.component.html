@@ -1,7 +1,9 @@
+<!-- The [ngClass] allows a CSS class to be added based on the condition -->
 <div class="snackbar-container" [ngClass]="submitClicked ? 'show':' '">
   <p class="snackbar-message">
-    <fa-icon [icon]="faGgCircle" class="snackbar-message-icon"></fa-icon>Your
-    data was submitted.
+    <!-- <fa-icon [icon]=""> allows us to use the icon that was imported in the applicable TS file -->
+    <fa-icon [icon]="faGgCircle" class="snackbar-message-icon"></fa-icon>{{SNACKBAR_MESSAGE}}
   </p>
+  <!-- The icons library we're using doesn't have an x icon, so we create our own -->
   <p class="x-mark" (click)="closeSnackbarOnClick()">X</p>
 </div>

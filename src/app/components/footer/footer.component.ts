@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   faFacebookF = faFacebookF;
   faInstagram = faInstagram;
   faTwitter = faTwitter;
-
+  // javascript Date object, use to retrieve the current year.
   year: number = new Date().getFullYear();
 
   constructor() {}
