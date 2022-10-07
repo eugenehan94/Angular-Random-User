@@ -1,6 +1,7 @@
 .contact-container {
   background-color: #2c2e31;
   padding-bottom: 30px;
+  padding-top: 30px;
 }
 .contact-wrapper {
   margin-top: 50px;
@@ -10,7 +11,7 @@
   align-items: center;
 }
 .contact-title {
-    color: white;
+  color: white;
 }
 .contact-card {
   background-color: #ffffff;
@@ -25,7 +26,7 @@
   align-items: center;
 }
 .contact-info h1 {
-    text-align: center;
+  text-align: center;
 }
 .contact-social-wrapper {
   padding: 5px;
@@ -42,6 +43,8 @@
 .contact-form-container {
   padding: 10px;
 }
+/* For the reactive form, will apply effect on if the input was touched or
+the inputted values are invalid based on the validators */
 input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
@@ -58,7 +61,8 @@ input.ng-invalid.ng-touched {
   font-weight: bold;
   letter-spacing: 2px;
 }
-
+/* :enabled applies on the button only when it is enabled, thus won't see this
+applied when button is disabled */
 .submit-btn:hover:enabled {
   cursor: pointer;
   background-color: rgb(128 106 0);
@@ -82,3 +86,4 @@ input.ng-invalid.ng-touched {
     margin-bottom: 20px;
   }
 }
+

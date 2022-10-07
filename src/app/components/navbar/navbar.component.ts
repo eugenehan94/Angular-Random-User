@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router, location: Location) {}
 
   ngOnInit(): void {
+    // window.innerWidth to find the window width on resize.
     this.screenWidth = window.innerWidth;
   }
 

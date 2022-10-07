@@ -31,7 +31,7 @@
 <div
   class="mobile-menu-container"
   [ngClass]="
-    showMobileMenu && screenWidth < 600 ? 'show-mobile-menu' : 'mobile-menu'
+    showMobileMenu && screenWidth < 600 && showMobileMenu ? 'show-mobile-menu' : 'mobile-menu'
   "
 >
   <div class="mobile-menu-close-btn">
@@ -94,5 +94,3 @@
     </div>
   </div>
 </div>
-
-<!-- https://stackoverflow.com/questions/59200492/how-to-pass-variable-to-css-in-angular -->
