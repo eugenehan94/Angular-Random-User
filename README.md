@@ -25,4 +25,4 @@ This project consist of different free random user APIs that users can choose fr
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Running Project
-Once clone, on your terminal run "npm install" and that's it.
+Once clone, on your terminal run "npm install" and then "npm start."
